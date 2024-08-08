@@ -2,7 +2,20 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        body: ["AzeretMono", "sans-serif"],
+        heading: ["Chillax", "serif"],
+      },
+      fontWeight: {
+        extralight: 200,
+        light: 300,
+        regular: 400,
+        medium: 500,
+        semibold: 600,
+        bold: 700,
+      },
+    },
   },
   plugins: [],
 };

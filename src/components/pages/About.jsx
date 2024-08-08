@@ -1,11 +1,11 @@
-import HeroSection from "../section/HeroSection";
-import AboutUs from "../section/AboutUs";
+import MainLayout from "../layout/MainLayout";
 
-export default function About() {
+const About = () => {
   return (
-    <div>
-      <HeroSection />
-      <AboutUs />
-    </div>
+    <MainLayout>
+      <div>About Us</div>
+    </MainLayout>
   );
-}
+};
+
+export default About;

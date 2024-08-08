@@ -1,3 +1,11 @@
-export default function BLog() {
-  return <div>BLog</div>;
-}
+import MainLayout from "../layout/MainLayout";
+
+const Blog = () => {
+  return (
+    <MainLayout>
+      <div>Blog</div>
+    </MainLayout>
+  );
+};
+
+export default Blog;

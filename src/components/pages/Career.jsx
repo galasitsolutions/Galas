@@ -1,3 +1,11 @@
-export default function Career() {
-  return <div>Career</div>;
-}
+import MainLayout from "../layout/MainLayout";
+
+const Career = () => {
+  return (
+    <MainLayout>
+      <div>Career Opportunities</div>
+    </MainLayout>
+  );
+};
+
+export default Career;
