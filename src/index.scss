@@ -5,9 +5,5 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-body {
-    background-color: #151515;
-    color: #fff;
-}
+@import "./styles/abstracts/variables";
+@import "./styles/base/base";
