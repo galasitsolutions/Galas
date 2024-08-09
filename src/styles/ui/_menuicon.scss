@@ -1,0 +1,50 @@
+$bar-height: 4px;
+$bar-width: 26px;
+$bar-radius: 2px;
+$bar-bg-color: white;
+$transition-duration: 200ms;
+$transition-ease: ease-in;
+$open-transition-delay: 200ms;
+
+.menu-icon {
+  padding: 0 0.2rem;
+  cursor: pointer;
+  width: 50px;
+  height: 20px;
+
+  .bar {
+    height: $bar-height;
+    width: $bar-width;
+    border-radius: $bar-radius;
+    background-color: $bar-bg-color;
+    transition: all $transition-duration $transition-ease;
+
+    &:nth-child(1) {
+      width: 80%;
+      margin-right: 10px;
+    }
+
+    &:nth-child(2) {
+      background: linear-gradient(90deg, #1e40af, #2563eb);
+      width: 80%;
+      margin-left: 10px;
+    }
+
+    &:nth-child(3) {
+      width: 80%;
+      margin-right: 10px;
+    }
+  }
+
+  &.open {
+    .bar:nth-child(2) {
+      margin-right: 40px;
+      transition-delay: $open-transition-delay;
+    }
+  }
+}
+
+.menu-btn {
+  line-height: 1.6;
+  padding: 0.1rem 0.4rem;
+}

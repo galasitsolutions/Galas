@@ -1,0 +1,106 @@
+/* Base Typography */
+h1 {
+  font-size: calc(2rem + 2vw);
+  line-height: 1.2;
+  transition: font-size 0.3s ease;
+}
+
+h2 {
+  font-size: calc(1.5rem + 1vw);
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: calc(1.25rem + 0.5vw);
+  line-height: 1.4;
+}
+
+h4 {
+  font-size: calc(1.1rem + 0.25vw);
+  line-height: 1.5;
+}
+
+h5 {
+  font-size: calc(1rem + 0.1vw);
+  line-height: 1.5;
+}
+
+h6 {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Tailwind Screen Sizes */
+@media (max-width: 1440px) {
+  h1 {
+    font-size: calc(2rem + 1.5vw);
+  }
+  h2 {
+    font-size: calc(1.5rem + 0.5vw);
+  }
+  h3 {
+    font-size: calc(1.25rem + 0.25vw);
+  }
+  h4 {
+    font-size: calc(1.1rem + 0.3vw);
+  }
+  h5 {
+    font-size: calc(1rem + 0.2vw);
+  }
+  h6 {
+    font-size: calc(0.875rem + 0.1vw);
+  }
+}
+
+@media (max-width: 960px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+  h4 {
+    font-size: 1.1rem;
+  }
+  h5 {
+    font-size: 1rem;
+  }
+  h6 {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+  h2 {
+    font-size: 1.25rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  h5 {
+    font-size: 0.875rem;
+  }
+  h6 {
+    font-size: 0.875rem;
+  }
+  p {
+    font-size: 0.875rem;
+  }
+  .small-text {
+    font-size: 0.75rem;
+  }
+}

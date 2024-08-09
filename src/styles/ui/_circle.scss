@@ -1,0 +1,61 @@
+.circle-box {
+  width: calc(100% - 80%);
+
+  .circle {
+    position: relative;
+    border-radius: 50%;
+
+    .circular-text {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 50%;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.56);
+      border-radius: 50%;
+      background-color: transparent;
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      animation: rotate 6s linear infinite;
+      transform-origin: center;
+
+      &::after {
+        content: "\f061";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 600;
+        text-align: center;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: $secondary-color;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+  .circle-box .circle .circular-text {
+    background-color: transparent;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
