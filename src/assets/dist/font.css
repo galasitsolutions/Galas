@@ -1,0 +1,28 @@
+/* Azeret Mono Font Faces */
+@font-face {
+  font-family: 'AzeretMono';
+  src: url('./fonts/Azeret/static/AzeretMono-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AzeretMono';
+  src: url('./fonts/Azeret/static/AzeretMono-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AzeretMono';
+  src: url('./fonts/Azeret/static/AzeretMono-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AzeretMono';
+  src: url('./fonts/Azeret/static/AzeretMono-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
