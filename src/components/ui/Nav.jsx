@@ -1,18 +1,28 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import Hamburger from "./Hamburger";
-import Button from "./Button";
+import Hamburger from "../ui/Hamburger";
+import Button from "../ui/Button";
+import useGsapMenuAnimation from "../../hooks/useGsapMenuAnimation";
 
 const Nav = ({ links }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [menuRef, barMidRef] = useGsapMenuAnimation(isMenuOpen);
 
-  const handleToggleMenu = () => setIsMenuOpen((prevState) => !prevState);
+  const handleToggleMenu = () => {
+    setIsMenuOpen((prevState) => !prevState);
+  };
+
+  // Define the CSS class for the navigation menu
+  const navMenuClass = isMenuOpen
+    ? "nav-menu nav-menu-open"
+    : "nav-menu nav-menu-closed";
 
   return (
-    <div className="container p-6 mx-auto lg:flex lg:justify-between lg:items-center ">
-      <div className="flex h-12 items-center  justify-between lg:flex-row  lg:w-full">
-        <Link to="/" aria-label="Homepage">
+    <div className="container p-6 mx-auto lg:flex lg:justify-between lg:items-center relative">
+      <div className="flex items-center justify-between lg:flex-row lg:w-full">
+        {/* Logo */}
+        <Link to="/" aria-label="Homepage" className="flex items-center">
           <img
             className="w-auto h-10 sm:h-12"
             src="https://galasitsolutions.com/src/assets/img/logo/galas-it-solutions.png"
@@ -20,40 +30,54 @@ const Nav = ({ links }) => {
           />
         </Link>
 
-        <div className="lg:hidden flex">
+        {/* Hamburger Menu Button */}
+        <div className="lg:hidden flex items-center">
           <button
+            id="toggle"
             aria-label="Toggle menu"
             onClick={handleToggleMenu}
-            className="text-gray-700 hover:text-blue-500 focus:outline-none"
+            className={`text-gray-700 hover:text-blue-500 focus:outline-none ${
+              isMenuOpen ? "open" : ""
+            }`}
           >
-            <Hamburger isOpen={isMenuOpen} />
+            <Hamburger barMidRef={barMidRef} /> {/* Pass the ref */}
           </button>
         </div>
 
+        {/* Navigation Menu */}
         <nav
-          className={`lg:relative lg:flex lg:items-center  ${
-            isMenuOpen ? "block" : "hidden"
-          } lg:block`}
+          ref={menuRef}
+          className={`lg:flex lg:items-center absolute top-24 left-0 w-full lg:w-auto bg-[#151515] lg:relative lg:top-0 transition-transform duration-300 ease-in-out ${navMenuClass}`}
           role="navigation"
           aria-label="Main Navigation"
         >
-          <ul className="flex flex-col lg:flex-row lg:space-x-12 lg:space-y-0 space-y-4">
+          <ul className="flex flex-col text-center lg:flex-row gap-4 lg:gap-8 lg:space-y-0 space-y-4">
             {links.map(({ path, label }) => (
               <li
                 key={path}
                 className="transition-colors duration-300 hover:text-blue-500"
               >
-                <Link className="nav-link" to={path}>
+                <Link
+                  className="nav-link w-[10%] lg:w-auto m-auto lg:m-0"
+                  to={path}
+                >
                   {label}
                 </Link>
               </li>
             ))}
+            {/* Mobile Button */}
+            <li className="lg:hidden px-4 pb-4">
+              <Link to="#contact">
+                <Button text="Let's Talk" />
+              </Link>
+            </li>
           </ul>
         </nav>
 
+        {/* Desktop Button */}
         <div className="hidden lg:block">
           <Link to="#contact">
-            <Button text="Lets Talk" />
+            <Button text="Let's Talk" />
           </Link>
         </div>
       </div>
