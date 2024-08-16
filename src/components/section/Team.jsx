@@ -1,33 +1,71 @@
+
+import TeamMembers from '../ui/TeamMembers';
+
 export default function Team() {
+  const teamMembers = [
+    { 
+      name: 'Shashank Singh',
+      position: 'Founder and Director', 
+      image: 'https://galasitsolutions.com/src/assets/img/team/shashank.webp' 
+    },
+
+    {
+       name: 'Vanshika Mohan',
+       position: 'Vice-President (HR)', 
+       image: 'https://galasitsolutions.com/src/assets/img/team/vanshika.webp'
+    },
+
+    { 
+      name: 'Shubham Singh',
+      position: 'Chief Technology Officer', 
+      image: 'https://galasitsolutions.com/src/assets/img/team/shubham.webp' 
+    },
+
+    {
+       name: 'Ankit Upadhyay', 
+       position: 'Project Manager', 
+       image: 'https://galasitsolutions.com/src/assets/img/team/ankit.webp'
+    },
+
+    { 
+      name: 'Gajendra Tripathi', 
+      position: 'MERN Stack Developer', 
+      image: 'https://galasitsolutions.com/src/assets/img/team/gajendra.webp'
+     },
+
+    { 
+      name: 'Sakshi Singh', 
+      position: 'Web Developer', 
+      image: 'https://galasitsolutions.com/src/assets/img/team/sakshi.webp'
+     },
+  ];
+
   return (
     <>
-      <section className="team relative">
+      <section className="team relative container mx-auto px-6">
         <div className="section-space"></div>
-      <div
-          className="team-inner flex flex-col items-center gap-16 w-3/4 lg:3/4 m-auto sm:w-auto sm:m-0 md:w-auto md:m-0">
-         <div
-            className="content flex flex-col justify-center items-center sm:items-stretch text-center"
-          >
-            <p class="section-title">
-              <span class="line bg-blue-800 font-semibold"></span> Our Team
+        <div className="team-inner flex flex-col items-center w-[calc(100%-30%)] mx-auto gap-16">
+          <div className="content flex flex-col justify-center items-center text-center">
+            <p className="section-title pb-4">
+              <span className="line bg-blue-800 font-semibold"></span> Our Team
             </p>
-            <div className="section-space-inner"></div>
-            <h2 class="content-heading font-heading font-semibold mb-4">
+         
+            <h2 className="content-heading font-heading font-semibold mb-4">
               Meet our Team
               <br />
-              <span class="text-blue-500">Passionate. Proactive. Expert.</span>
+              <span className="text-blue-500">Passionate. Proactive. Expert.</span>
             </h2>
-            <p class="text-xs">
-            We lead with care
-               <span class="line bg-white font-semibold"></span>our core value
-              < span class="line bg-white font-semibold"></span>and a shared
+            <p className="text-xs">
+              We lead with care
+              <span className="line bg-white font-semibold"></span>our core value
+              <span className="line bg-white font-semibold"></span>and a shared
               passion for connecting the world
             </p>
-            </div> 
-          
-         
+          </div>
+          <TeamMembers members={teamMembers} gapClass="my-8" />
         </div>
       </section>
+      <div className="section-space"></div>
     </>
   );
 }

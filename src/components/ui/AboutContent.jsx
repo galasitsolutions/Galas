@@ -20,7 +20,7 @@ const AboutUsContent = ({ title, heading, description, points }) => {
           {points.map((point, index) => (
             <li key={index} className="important-point flex gap-2.5 justify-start items-center">
               <div className="list-icon bg-blue-600"></div>
-              <h5>{point}</h5>
+              <p>{point}</p>
             </li>
           ))}
         </ul>
@@ -33,7 +33,7 @@ const AboutUsContent = ({ title, heading, description, points }) => {
 };
 AboutUsContent.propTypes = {
     title: PropTypes.string.isRequired,
-    heading: PropTypes.string.isRequired,
+    heading: PropTypes.object.isRequired,
     description: PropTypes.string.isRequired,
     points: PropTypes.arrayOf(PropTypes.string).isRequired,
   };

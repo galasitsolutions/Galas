@@ -26,8 +26,8 @@ export default function AboutSection() {
   return (
     <>
       <div className="section-space" aria-hidden="true"></div>
-      <section className="about-us p-2">
-      <div className="about-inner flex justify-center items-center flex-wrap gap-10 flex-col md:flex-row sm:flex-col">
+      <section className="about-us p-2 container mx-auto px-6">
+      <div className="about-inner flex justify-center items-center flex-wrap gap-10 flex-col lg:flex-row">
           <div
             className="about-img relative flex-1"
             data-aos="zoom-in-right"
