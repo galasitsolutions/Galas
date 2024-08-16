@@ -4,7 +4,10 @@ export default function HeroSection() {
   return (
     <>
       <div className="section-space" aria-hidden="true"></div>
-      <section className="hero-section relative" aria-labelledby="hero-heading">
+      <section
+        className="hero-section container mx-auto px-6 relative"
+        aria-labelledby="hero-heading"
+      >
         <div className="hero-inner">
           <div className="hero-content flex items-center justify-between">
             <article className="content">

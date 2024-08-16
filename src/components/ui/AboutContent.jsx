@@ -12,30 +12,32 @@ const AboutUsContent = ({ title, heading, description, points }) => {
           <h2 className="content-heading font-heading font-semibold">
             {heading}
           </h2>
-          <p className="content sm:text-justify hyphens-auto">
-            {description}
-          </p>
+          <p className="content sm:text-justify hyphens-auto">{description}</p>
         </div>
         <ul className="important flex flex-col gap-2">
           {points.map((point, index) => (
-            <li key={index} className="important-point flex gap-2.5 justify-start items-center">
+            <li
+              key={index}
+              className="important-point flex gap-2.5 justify-start items-center"
+            >
               <div className="list-icon bg-blue-600"></div>
-              <h5>{point}</h5>
+              <p>{point}</p>
             </li>
           ))}
         </ul>
         <div className="product-btn">
-        <Button text="Learn More"/>
-            </div>
+          <Button text="Learn More" />
+        </div>
       </article>
     </div>
   );
 };
+
 AboutUsContent.propTypes = {
-    title: PropTypes.string.isRequired,
-    heading: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    points: PropTypes.arrayOf(PropTypes.string).isRequired,
-  };
-  
+  title: PropTypes.string.isRequired,
+  heading: PropTypes.node.isRequired, // Update here
+  description: PropTypes.string.isRequired,
+  points: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
+
 export default AboutUsContent;

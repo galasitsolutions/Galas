@@ -1,12 +1,14 @@
-
-
-import AboutUsContent from '../ui/AboutContent';
+import AboutUsContent from "../ui/AboutContent";
 
 const aboutUsData = {
-  title: 'About Us',
-  heading:  <>
-  We're <span style={{ color: '#2563eb' }}>Bridging Talented Vision for</span> Unmatched Success
-</>,
+  title: "About Us",
+  heading: (
+    <>
+      We re{" "}
+      <span style={{ color: "#2563eb" }}>Bridging Talented Vision for</span>{" "}
+      Unmatched Success
+    </>
+  ),
   description: `Galas IT Solution incorporates skilled IT professionals with
                 innovative companies. We ensure that candidates are highly
                 qualified and culturally appropriate by doing thorough
@@ -16,33 +18,29 @@ const aboutUsData = {
                 ever-changing tech landscape, which ensures your
                 organization's success.`,
   points: [
-    'Contract and Permanent Hiring',
-    'Targeted Digital Marketing Solutions',
-    'Comprehensive IT Consulting Services'
-  ]
+    "Contract and Permanent Hiring",
+    "Targeted Digital Marketing Solutions",
+    "Comprehensive IT Consulting Services",
+  ],
 };
 
 export default function AboutSection() {
   return (
     <>
       <div className="section-space" aria-hidden="true"></div>
-      <section className="about-us p-2">
-      <div className="about-inner flex justify-center items-center flex-wrap gap-10 flex-col md:flex-row sm:flex-col">
-          <div
-            className="about-img relative flex-1"
-            data-aos="zoom-in-right"
-            data-aos-duration="500"
-          >
+      <section className="about-us p-2 container mx-auto px-6 ">
+        <div className="about-inner flex justify-center items-center flex-wrap gap-10 flex-col lg:flex-row">
+          <div className="about-img relative flex-1">
             <img
               src="https://galasitsolutions.com/src/assets/img/product/work.webp"
               className="image-container rounded-2xl  object-cover shadow-sm h-full sm:h-1/2vh md:h-1/2vh"
               loading="lazy"
               role="img"
               aria-label="Image description"
-              alt= "About image showcasing companies description"
+              alt="About image showcasing companies description"
             />
           </div>
-          <AboutUsContent 
+          <AboutUsContent
             title={aboutUsData.title}
             heading={aboutUsData.heading}
             description={aboutUsData.description}
