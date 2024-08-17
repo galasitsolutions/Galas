@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import Hamburger from "../ui/Hamburger";
 import Button from "../ui/Button";
+import galas from "../../assets/img/icons/galas-it-solutions.png";
 import useGsapMenuAnimation from "../../hooks/useGsapMenuAnimation";
 
 const Nav = ({ links }) => {
@@ -13,11 +14,6 @@ const Nav = ({ links }) => {
     setIsMenuOpen((prevState) => !prevState);
   };
 
-  // Define the CSS class for the navigation menu
-  const navMenuClass = isMenuOpen
-    ? "nav-menu nav-menu-open"
-    : "nav-menu nav-menu-closed";
-
   return (
     <div className="container p-6 mx-auto lg:flex lg:justify-between lg:items-center relative">
       <div className="flex items-center justify-between lg:flex-row lg:w-full">
@@ -25,7 +21,7 @@ const Nav = ({ links }) => {
         <Link to="/" aria-label="Homepage" className="flex items-center">
           <img
             className="w-auto h-10 sm:h-12"
-            src="https://galasitsolutions.com/src/assets/img/logo/galas-it-solutions.png"
+            src={galas}
             alt="Galas IT Solutions"
           />
         </Link>
@@ -40,14 +36,16 @@ const Nav = ({ links }) => {
               isMenuOpen ? "open" : ""
             }`}
           >
-            <Hamburger barMidRef={barMidRef} /> {/* Pass the ref */}
+            <Hamburger barMidRef={barMidRef} />
           </button>
         </div>
 
         {/* Navigation Menu */}
         <nav
           ref={menuRef}
-          className={`lg:flex lg:items-center absolute top-24 left-0 w-full lg:w-auto bg-[#151515] lg:relative lg:top-0 transition-transform duration-300 ease-in-out ${navMenuClass}`}
+          className={`lg:flex lg:items-center absolute top-24 left-0 w-full lg:w-auto bg-[#151515] lg:relative lg:top-0 transition-transform duration-300 ease-in-out ${
+            isMenuOpen ? "nav-menu-open" : "nav-menu-closed"
+          }`}
           role="navigation"
           aria-label="Main Navigation"
         >

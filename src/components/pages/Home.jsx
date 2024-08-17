@@ -3,14 +3,16 @@ import HeroSection from "../section/HeroSection";
 import AboutSection from "../section/AboutSection";
 import Services from "../section/Services";
 import Team from "../section/Team";
+import ContactUs from "../section/ContactUs";
 
 const Home = () => {
   return (
     <MainLayout>
       <HeroSection />
-      <AboutSection/>
-      <Services/>
-      <Team/>
+      <AboutSection />
+      <Services />
+      <Team />
+      <ContactUs />
     </MainLayout>
   );
 };

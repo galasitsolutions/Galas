@@ -1,15 +1,33 @@
 import PropTypes from "prop-types";
 import Button from "./Button";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import { useState } from "react";
 
 const Card = ({ title, description, features }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <section className="card-digital  bg-white rounded-lg shadow-lg overflow-hidden hover:bg-blue-800 hover:text-white transition-transform transform-gpu hover:scale-105">
-      <article className="card-content flex flex-col gap-6 h-full p-6 ">
+    <section
+      className={`card-digital bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform-gpu ${
+        isHovered ? "bg-blue-800 text-white" : ""
+      }`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      aria-labelledby={title}
+      aria-describedby={description}
+    >
+      <article className="card-content flex flex-col gap-4 h-full p-4">
         <div className="flex items-center gap-2">
-          <div className="list-icon bg-blue-600 w-6 h-6 rounded-full"></div>
-          <h4 className="card-heading font-semibold text-lg">{title}</h4>
+          <CheckCircleIcon
+            className={`w-6 h-6 ${isHovered ? "text-white" : "text-blue-600"}`}
+          />
+          <h4 id={title} className="card-heading font-semibold text-lg">
+            {title}
+          </h4>
         </div>
-        <p className="font-normal text-sm flex-grow">{description}</p>
+        <p id={description} className="font-normal text-sm flex-grow">
+          {description}
+        </p>
         <div className="feature flex flex-col gap-2">
           <h5 className="font-medium text-md">Features</h5>
           <ul className="important flex flex-col gap-2">
@@ -18,7 +36,9 @@ const Card = ({ title, description, features }) => {
                 className="important-point flex items-center gap-2"
                 key={index}
               >
-                <div className="list-icon bg-blue-600 w-4 h-4 rounded-full"></div>
+                <CheckCircleIcon
+                  className={`text-blue-600 ${isHovered ? "text-white" : ""}`}
+                />
                 <p>{feature}</p>
               </li>
             ))}
@@ -31,6 +51,7 @@ const Card = ({ title, description, features }) => {
     </section>
   );
 };
+
 Card.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,

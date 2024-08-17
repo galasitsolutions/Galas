@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import Button from "./Button";
 
 const AboutUsContent = ({ title, heading, description, points }) => {
@@ -6,7 +7,7 @@ const AboutUsContent = ({ title, heading, description, points }) => {
     <div className="about-content flex-1">
       <article className="content flex flex-col items-start gap-4">
         <p className="section-title">
-          <span className="line bg-blue-800 font-semibold "></span> {title}
+          <span className="line bg-blue-800 font-semibold"></span> {title}
         </p>
         <div className="about-des flex flex-col gap-2">
           <h2 className="content-heading font-heading font-semibold">
@@ -20,7 +21,7 @@ const AboutUsContent = ({ title, heading, description, points }) => {
               key={index}
               className="important-point flex gap-2.5 justify-start items-center"
             >
-              <div className="list-icon bg-blue-600"></div>
+              <CheckCircleIcon className="text-blue-600" />
               <p>{point}</p>
             </li>
           ))}
@@ -35,7 +36,8 @@ const AboutUsContent = ({ title, heading, description, points }) => {
 
 AboutUsContent.propTypes = {
   title: PropTypes.string.isRequired,
-  heading: PropTypes.node.isRequired, // Update here
+  heading: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
+    .isRequired,
   description: PropTypes.string.isRequired,
   points: PropTypes.arrayOf(PropTypes.string).isRequired,
 };

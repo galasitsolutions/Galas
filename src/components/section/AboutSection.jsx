@@ -1,4 +1,5 @@
 import AboutUsContent from "../ui/AboutContent";
+import aboutImg from "../../assets/img/product/work.webp";
 
 const aboutUsData = {
   title: "About Us",
@@ -28,16 +29,13 @@ export default function AboutSection() {
   return (
     <>
       <div className="section-space" aria-hidden="true"></div>
-      <section className="about-us p-2 container mx-auto px-6 ">
-        <div className="about-inner flex justify-center items-center flex-wrap gap-10 flex-col lg:flex-row">
+      <section className="about-us p-2 container mx-auto px-4">
+        <div className="about-inner flex justify-center items-center flex-wrap gap-10 flex-col lg:flex-row p-2">
           <div className="about-img relative flex-1">
             <img
-              src="https://galasitsolutions.com/src/assets/img/product/work.webp"
-              className="image-container rounded-2xl  object-cover shadow-sm h-full sm:h-1/2vh md:h-1/2vh"
-              loading="lazy"
-              role="img"
-              aria-label="Image description"
+              src={aboutImg}
               alt="About image showcasing companies description"
+              className="rounded-2xl object-cover shadow-sm h-full sm:h-[50vh] md:h-[50vh]"
             />
           </div>
           <AboutUsContent

@@ -2,12 +2,14 @@ import Card from "../ui/Card";
 
 const servicesData = [
   {
+    id: 1,
     title: "IT Product Development",
     description:
       "We offer product features based on your specifications, produce MVPs, and develop in Agile. We analyze, develop, and develop a precise product that is targeted to your objectives.",
     features: ["Web Development", "App Development", "UI/UX Designing"],
   },
   {
+    id: 2,
     title: "IT Staffing",
     description:
       "Staffing, about finding the right person for the job, not just the requirements. We thrive in matching people with your team's culture and work ethic, from the C-suite to entry-level positions.",
@@ -18,6 +20,7 @@ const servicesData = [
     ],
   },
   {
+    id: 3,
     title: "Digital Marketing",
     description:
       "Our skilled experts develop personalized digital marketing plans that are aligned with your company's objectives, leveraging the newest trends to achieve strategic, measurable results.",
@@ -29,12 +32,12 @@ const Services = () => {
   return (
     <>
       <div className="section-space"></div>
-      <section className="product relative w-full h-full bg-neutral-200 text-black">
+      <section className="product relative bg-neutral-200 text-black">
         <div className="section-space"></div>
-        <div className="product-inner container mx-auto   flex flex-col">
-          <div className="product  flex justify-center items-center p-4 sm:p-1 md:p-1 sm:gap-2 md:gap-2">
+        <div className="product-inner container mx-auto px-4 flex flex-col">
+          <div className="product flex justify-center items-center p-2 lg:p-4 lg:gap-2">
             <article className="relative flex flex-col">
-              <h2 className="content-heading font-heading font-semibold sm:text-center">
+              <h2 className="content-heading text-center font-heading font-semibold">
                 Our Expertise in <span className="text-blue-500">Services</span>
               </h2>
               <p className="text-xs text-center">
@@ -44,11 +47,11 @@ const Services = () => {
             </article>
           </div>
           <div className="section-space"></div>
-          <section className="services relative px-10">
-            <div className="services-card grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-10">
-              {servicesData.map((service, index) => (
+          <section className="services relative">
+            <div className="services-card grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {servicesData.map((service) => (
                 <Card
-                  key={index}
+                  key={service.id} // Use unique identifier for key
                   title={service.title}
                   description={service.description}
                   features={service.features}
