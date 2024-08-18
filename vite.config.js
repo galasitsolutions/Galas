@@ -35,7 +35,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "@": path.resolve("./src"), // Updated to be compatible with ES module
+      "@": path.resolve("./src"),
     },
   },
 });
