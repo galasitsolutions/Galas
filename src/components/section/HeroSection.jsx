@@ -10,6 +10,9 @@ export default function HeroSection() {
 
   return (
     <>
+      {/* Preload the LCP image */}
+      <link rel="preload" href={HeroBanner} as="image" />
+
       <div className="section-space" aria-hidden="true"></div>
       <section
         className="hero-section relative container mx-auto px-6"
@@ -29,11 +32,11 @@ export default function HeroSection() {
             </article>
             {width > 768 && (
               <Suspense
-              /*      fallback={
+                fallback={
                   <div className="flex items-center justify-center w-full h-full">
-                    <span>Loading...</span>{" "}
+                    <span>Loading...</span>
                   </div>
-                } */
+                }
               >
                 <CircleText circleText="Hire Us * Hire us * &nbsp;" />
               </Suspense>
@@ -45,9 +48,11 @@ export default function HeroSection() {
               <div className="w-full h-[25vh] lg:h-[50vh]">
                 <img
                   src={HeroBanner}
-                  className="banner-img w-full h-full object-cover"
-                  loading="lazy"
                   alt="Hero banner showcasing innovative tech solutions"
+                  loading="lazy"
+                  className="banner-img w-full h-full object-cover"
+                  width={1920}
+                  height={1080}
                 />
               </div>
             </div>

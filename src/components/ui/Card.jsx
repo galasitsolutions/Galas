@@ -8,8 +8,8 @@ const Card = ({ title, description, features }) => {
 
   return (
     <section
-      className={`card-digital bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform-gpu ${
-        isHovered ? "bg-blue-800 text-white" : ""
+      className={`card-digital rounded-lg shadow-lg overflow-hidden transition-transform transform-gpu ${
+        isHovered ? "bg-blue-800 text-white" : "bg-white text-black"
       }`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

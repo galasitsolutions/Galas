@@ -22,18 +22,16 @@ const useGsapMenuAnimation = (isMenuOpen) => {
             menuElement.style.pointerEvents = isMenuOpen ? "auto" : "none";
           },
         });
-        // Ensure correct transform for small screens
         menuElement.style.transform = `translateY(${
           isMenuOpen ? "0%" : "-150%"
         })`;
       } else {
-        // Ensure no GSAP animation for large screens
         gsap.set(menuElement, {
           y: "0%",
           opacity: 1,
         });
         menuElement.style.pointerEvents = "auto";
-        menuElement.style.transform = "none"; // Ensure transform is reset
+        menuElement.style.transform = "none";
       }
     }
 

@@ -36,6 +36,9 @@ export default function AboutSection() {
               src={aboutImg}
               alt="About image showcasing companies description"
               className="rounded-2xl object-cover shadow-sm h-full sm:h-[50vh] md:h-[50vh]"
+              loading="lazy"
+              width={800}
+              height={600}
             />
           </div>
           <AboutUsContent

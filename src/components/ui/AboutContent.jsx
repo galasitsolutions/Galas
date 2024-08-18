@@ -1,3 +1,4 @@
+import React from "react";
 import PropTypes from "prop-types";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import Button from "./Button";
@@ -42,4 +43,4 @@ AboutUsContent.propTypes = {
   points: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-export default AboutUsContent;
+export default React.memo(AboutUsContent); // Added React.memo

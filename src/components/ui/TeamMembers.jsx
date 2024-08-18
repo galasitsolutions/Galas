@@ -18,6 +18,8 @@ function TeamMembers({ members }) {
                 alt={member.name}
                 className="w-full"
                 loading="lazy"
+                width={300} // Adjust width as needed
+                height={300} // Adjust height as needed
               />
               <figcaption className="flex flex-col items-center justify-center">
                 <p>{member.name}</p>
@@ -42,6 +44,8 @@ function TeamMembers({ members }) {
                 alt={member.name}
                 className="w-full"
                 loading="lazy"
+                width={300} // Adjust width as needed
+                height={300} // Adjust height as needed
               />
               <figcaption className="flex flex-col items-center justify-center">
                 <p>{member.name}</p>

@@ -1,6 +1,6 @@
+import { useState, memo } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import Hamburger from "../ui/Hamburger";
 import Button from "../ui/Button";
 import galas from "../../assets/img/icons/galas-it-solutions.png";
@@ -92,4 +92,7 @@ Nav.propTypes = {
   ).isRequired,
 };
 
-export default Nav;
+// Assign a display name for easier debugging
+Nav.displayName = "Nav";
+
+export default memo(Nav);
