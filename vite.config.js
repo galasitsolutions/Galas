@@ -1,9 +1,11 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import compression from "vite-plugin-compression";
-import { ViteBundlerAnalyzer } from "vite-plugin-bundle-analyzer";
 import { createHtmlPlugin } from "vite-plugin-html";
 import path from "path";
+
+import bundleAnalyzer from "vite-plugin-bundle-analyzer";
+const { ViteBundlerAnalyzer } = bundleAnalyzer;
 
 export default defineConfig({
   plugins: [
