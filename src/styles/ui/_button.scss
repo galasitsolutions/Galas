@@ -1,0 +1,13 @@
+.btn {
+  outline: 0px solid #151515;
+  outline-offset: 0px;
+  padding-inline: 16px;
+  padding-block: 4px;
+  border-radius: 9999px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    outline: 2px solid $text-color;
+    outline-offset: 4px;
+  }
+}

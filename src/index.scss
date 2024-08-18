@@ -1,0 +1,21 @@
+@import url("./assets/dist/fonts/Chillax/Fonts/WEB/css/chillax.css");
+@import url("./assets/dist/font.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./styles/abstracts/variables";
+@import "./styles/base/base";
+@import "./styles/abstracts/typography";
+@import "./styles/abstracts/layout";
+@import "./styles/ui/menuicon";
+@import "./styles/components/navbar";
+@import "./styles/ui/circle";
+@import "./styles/ui/button";
+@import "./styles/ui/heroImage";
+@import "./styles/ui/marquee";
+@import "./styles/ui/line";
+@import "./styles/ui/check";
+@import "./styles/ui/teamImage";
+@import "./styles/ui/contactCard";
