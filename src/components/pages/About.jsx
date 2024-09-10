@@ -20,7 +20,7 @@ const About = () => {
           <div className="mt-10">
           <h3 className="mt-4 text-center">Our Services Include:</h3>
             <div className="flex flex-wrap mt-20 gap-10 leading-8">
-              <div className= "sm:w-full bg-slate-800 lg:w-[30vw] px-5 py-5 rounded-md">
+              <div className= "sm:w-full bg-slate-800 lg:w-[30vw] px-5 py-5 rounded-md hover:bg-slate-950 hover:text-emerald-200 hover:rounded-[3vw]">
                 <h4 className="font-semibold">Digital Marketing Services</h4>
                 <ul className="list-disc list-inside">
                   <li className="mt-2 text-xs">SEO Management – Improve your website's search engine ranking and drive organic traffic with our expert SEO services, designed to increase visibility on search engines like Google.</li>
@@ -31,7 +31,7 @@ const About = () => {
                   <li className="mt-2 text-xs">Website Maintenance – Keep your website running smoothly with our website maintenance services, ensuring optimal performance, security, and user experience.</li>
                 </ul>
               </div>
-              <div className="sm:w-full bg-slate-800 lg:w-[30vw] items-end rounded-md px-5 py-5">
+              <div className="sm:w-full bg-slate-800 lg:w-[30vw] items-end rounded-md  hover:bg-slate-950 hover:text-emerald-200 hover:rounded-[3vw] px-5 py-5">
                 <h4 className="font-semibold">IT Services</h4>
                 <ul className="list-disc text-xs list-inside">
                   <li className="mt-2">IT Consulting – Empower your business with strategic IT consulting services, helping you implement scalable and efficient IT infrastructure.</li>
@@ -41,7 +41,7 @@ const About = () => {
                 </ul>
               </div>
 
-              <div className="sm:w-full bg-slate-800 lg:w-[30vw] items-end rounded-md px-5 py-5">
+              <div className="sm:w-full bg-slate-800 lg:w-[30vw] items-end rounded-md  hover:bg-slate-950 hover:text-emerald-200 hover:rounded-[3vw] px-5 py-5">
                 <h4 className="font-semibold">Staffing Services</h4>
                 <ul className="list-disc text-xs list-inside">
                   <li className="mt-2">Permanent Staffing – Find the perfect fit for your long-term roles with our professional permanent staffing services, ensuring the right talent matches your organization’s needs.</li>
@@ -159,6 +159,31 @@ const About = () => {
               </ul>
             </div>
           </div>
+
+          <h4 className="mt-4 text-center">Secondary Keywords:</h4>
+          <p className="mt-4 mb-4">These are the variations of the primary keywords, which may also rank and bring in additional traffic</p>
+            <div className="mt-20 flex flex-wrap gap-10 items-center gap-10">
+              <div className= "bg-slate-900 w-[28vw] text-slate-200 px-5 py-5 rounded-md hover:bg-slate-700 hover:text-sky-200">
+                <h5 className="font-semibold text-xl px-4">Search engine ranking </h5>
+                <p className="text-xs  px-4 leading-1 mt-2 font-semibold">Highly competitive but crucial for businesses looking to improve their SEO.</p>
+              </div>
+              <div className= "bg-slate-900 w-[28vw] text-slate-200 px-5 py-5 rounded-md hover:bg-slate-700 hover:text-sky-200">
+                <h5 className="font-semibold px-4">Organic traffic </h5>
+                <p className="text-xs leading-1 px-4 mt-2 font-semibold">Medium competition, relevant for companies focused on improving their online visibility.</p>
+              </div>
+              <div className= "bg-slate-900 w-[28vw] text-slate-200 px-5 py-5 rounded-md hover:bg-slate-700 hover:text-sky-200">
+                <h5 className="font-semibold px-4">Lead generation </h5>
+                <p className="text-xs leading-1 mt-2 px-4 font-semibold">High competition, relevant in the context of email marketing and PPC services.</p>
+              </div>
+              <div className= "bg-slate-900 w-[28vw] text-slate-200 px-5 py-5 rounded-md hover:bg-slate-700 hover:text-sky-200">
+                <h5 className="font-semibold px-4">Customer retention </h5>
+                <p className="text-xs leading-1 mt-2 px-4 font-semibold">Low to medium competition, useful for businesses focusing on long-term client relationships via email marketing.</p>
+              </div>
+              <div className= "bg-slate-900 w-[28vw] text-slate-200 px-5 py-5 rounded-md hover:bg-slate-700 hover:text-sky-200">
+                <h5 className="font-semibold px-4">Responsive websites  </h5>
+                <p className="text-xs leading-1 mt-2 px-4 font-semibold">Low to medium competition, relevant for web development services targeting mobile optimization.</p>
+              </div>
+            </div>
         </div>
   
       </Suspense>
