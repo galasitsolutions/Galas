@@ -184,6 +184,19 @@ const About = () => {
                 <p className="text-xs leading-1 mt-2 px-4 font-semibold">Low to medium competition, relevant for web development services targeting mobile optimization.</p>
               </div>
             </div>
+
+            <h4 className="mt-4 text-center">Ranking Potential:</h4>
+            <div className="mt-20 group flex flex-wrap gap-20 items-center gap-10">
+              <div className= "bg-slate-900 w-[20vw] h-[18vw] text-slate-200 p-5 rounded-[8vh] group-hover:scale-[0.85] hover:!scale-100 hover:bg-blue-300 hover:text-slate-950">
+                <p className="text-md px-4 leading-1 mt-4"><b>High-ranking keywords</b> are those with broad appeal and strong competition. They can drive significant traffic but will require substantial SEO efforts, like <b>SEO services, PPC advertising, and web development</b>.</p>
+              </div>
+              <div className= "bg-slate-900 w-[20vw] h-[18vw] text-slate-200 p-2 rounded-[8vh] group-hover:scale-[0.85] hover:!scale-100 hover:bg-blue-300 hover:text-slate-950">
+                <p className="text-md px-4 leading-1 mt-4"><b>Medium-ranking keywords</b> are moderately competitive but still valuable for driving niche traffic. Examples include <b>email marketing campaigns and IT project management</b>.</p>
+              </div>
+              <div className= "bg-slate-900 w-[20vw] h-[18vw] text-slate-200 p-2 rounded-[8vh] group-hover:scale-[0.85] hover:!scale-100 hover:bg-blue-300 hover:text-slate-950">
+                <p className="text-md  px-4 leading-1 mt-4"><b>Low-ranking keywords </b> typically have less competition, making it easier to rank for them. Although traffic may be lower, they can attract highly targeted audiences. Examples include <b>contract to hire services and website maintenance services</b>.</p>
+              </div>
+            </div>
         </div>
   
       </Suspense>
