@@ -180,8 +180,8 @@ const About = () => {
               {Primary.map(item=>{
                 return(
                   <>
-                  <div className="p-6 mt-10 group-hover:blur-sm hover:!blur-none  group-hover:scale-[0.85] hover:!scale-100 rounded-lg w-[30vw]  bg-[#3b82f6] hover:bg-[#1e40af]">
-                  <h5>{item.title}</h5>
+                  <div className="p-6 sm:text-xs mt-10 group-hover:blur-sm hover:!blur-none  group-hover:scale-[0.85] hover:!scale-100 rounded-lg w-[30vw]  bg-[#3b82f6] hover:bg-[#1e40af]">
+                  <h5 className="sm:text-[2vw] font-semibold">{item.title}</h5>
                   <ul className="list-disc list-inside">
                   {item.description.map((desc) => (
                         <li key={desc}>{desc}<br /> 
@@ -201,8 +201,8 @@ const About = () => {
                 return(
                   <>
                   <div className= "bg-[#fff] w-[28vw] text-[#151515] px-5 py-5 rounded-md hover:bg-[#1e40af] hover:text-sky-200">
-                    <h5 className="font-semibold text-xl px-4">{item.title}</h5>
-                    <p className="text-xs  px-4 leading-1 mt-2 font-semibold">{item.description}</p>
+                    <h5 className="font-semibold text-xl sm:text-[3vh] px-4">{item.title}</h5>
+                    <p className="text-xs  px-4 leading-1 mt-2 sm:text-xs font-semibold">{item.description}</p>
                   </div>
                   </>
                 )
