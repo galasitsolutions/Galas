@@ -84,7 +84,7 @@ const Primary = [
     ]
   },{
     title:"10.IT Project Management",
-    description:["o	Ranking: Medium",
+    description:["Ranking: Medium",
       "This is moderately competitive, relevant for attracting companies looking to outsource or manage complex IT projects."
     ]
   },{
@@ -159,11 +159,11 @@ const About = () => {
             <div className="flex flex-wrap mt-20 gap-10 leading-8">
                 {ServiceData.map(item=>{
                   return(
-                    <div className="sm:w-full bg-[#fff] text-[#1e40af] font-semibold lg:w-[30vw] p-5 text-xs rounded-md hover:bg-[#1e40af] hover:text-[#fff] hover:rounded-[3vw]">
-                      <h4>{item.title}</h4>
+                    <div className="rounded-lg shadow-lg overflow-hidden w-[29vw] p-2 bg-white text-black hover:bg-[#1e40af] hover:text-[#fff]">
+                      <h4 className="p-2 font-bold text-center">{item.title}</h4>
                       <ul>
                       {item.description.map((desc) => (
-                        <li key={desc}>
+                        <li className="p-2 text-[12px] font-semibold" key={desc}>
                           {desc}
                         <br /> 
                         </li>
@@ -171,20 +171,19 @@ const About = () => {
                       </ul>
                     </div>
                     )
-                  })};
+                  })}
               </div>
           </div>
-
-          <h4 className="my-20 font-semibold text-center">Primary Keywords</h4>
-          <div className="primary group cursor-pointer flex flex-wrap gap-10 fit-content">
+          <h4 className="font-semibold p-2 text-5xl text-center w-full text-[#fff] text-[5vw]"><span className="text-[#3b82f6]">Primary</span> Keywords</h4>
+          <div className="primary flex flex-wrap rounded-lg gap-10 p-5 fit-content">
               {Primary.map(item=>{
                 return(
                   <>
-                  <div className="p-6 sm:text-xs mt-10 group-hover:blur-sm hover:!blur-none  group-hover:scale-[0.85] hover:!scale-100 rounded-lg w-[30vw]  bg-[#3b82f6] hover:bg-[#1e40af]">
-                  <h5 className="sm:text-[2vw] font-semibold">{item.title}</h5>
+                  <div className="p-6 sm:text-xs mt-10 rounded-lg shadow-lg overflow-hidden w-[20vw] bg-white py-10 text-black hover:bg-[#1e40af] hover:text-[#fff]">
+                  <h5 className="sm:text-[2vw] lg:text-[1.2vw] font-semibold py-3">{item.title}</h5>
                   <ul className="list-disc list-inside">
                   {item.description.map((desc) => (
-                        <li key={desc}>{desc}<br /> 
+                        <li className=" text-[10px] font-semibold" key={desc}>{desc}<br /> 
                         </li>
                   ))}
                   </ul>
@@ -194,25 +193,25 @@ const About = () => {
               })}
           </div>
 
-          <h4 className="mt-4 flex items-center">Secondary Keywords:</h4>
+          <h4 className="font-semibold p-2 text-5xl text-center w-full text-[#fff] text-[5vw]"><span className="text-[#3b82f6]">Secondary</span> Keywords</h4>
           <p className="mt-4 mb-4 w-full text-center">These are the variations of the primary keywords, which may also rank and bring in additional traffic</p>
-          <div className="mt-20 flex flex-wrap gap-10 items-center gap-10">
+          <div className=" mx-10 flex items-center justify-center w-full h-[30vh] gap-10 p-10 p-2 text-black">
               {Secondary.map(item=>{
                 return(
                   <>
-                  <div className= "bg-[#fff] w-[28vw] text-[#151515] px-5 py-5 rounded-md hover:bg-[#1e40af] hover:text-sky-200">
-                    <h5 className="font-semibold text-xl sm:text-[3vh] px-4">{item.title}</h5>
-                    <p className="text-xs  px-4 leading-1 mt-2 sm:text-xs font-semibold">{item.description}</p>
+                  <div className= "bg-[#fff] w-[27vw] h-[15vw] text-[#151515] rounded-lg shadow-lg overflow-hidden hover:bg-[#1e40af] hover:text-[#fff]">
+                    <h5 className="font-semibold text-[2.6vh] text-center p-4">{item.title}</h5>
+                    <p className="text-[15px] mt-2 px-2">{item.description}</p>
                   </div>
                   </>
                 )
               })}
           </div>
-          <h4 className="mt-4 flex items-center justify-center">Ranking Potential:</h4>
-          <div className="mt-20 group flex flex-wrap gap-20 p-6 items-center w-full justify-center w-full">
+          <h4 className="font-semibold p-2 text-5xl text-center w-full text-[#fff] text-[5vw]">Ranking <span className="text-[#3b82f6]">Potential</span></h4>
+          <div className="mt-10 group flex flex-wrap gap-20 p-6 items-center w-full justify-center w-full">
             {Ranking.map((item) => (
-              <div className="bg-[#fff] w-[20vw] h-[18vw] text-[#151515] p-5 rounded-[8vh] group-hover:scale-[0.85] hover:!scale-100 hover:text-[#1e40af] hover:font-bold">
-                <p className="text-md px-4 leading-1 mt-4">{item.description}</p>
+              <div className="bg-[#fff] w-[20vw] h-[15vw] text-[#151515] p-2 rounded-lg shadow-lg overflow-hidden hover:bg-[#1e40af] hover:text-[#fff]">
+                <p className="text-[15px]  px-4 leading-1 mt-3 font-semibold">{item.description}</p>
               </div>
             ))}
           </div>
