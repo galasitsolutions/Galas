@@ -143,7 +143,7 @@ const About = () => {
         <div className="about-inner flex justify-center items-center flex-wrap gap-10 flex-col lg:flex-row p-2">
           <div className="about-img relative flex-1">
             <img
-              src="https://imageio.forbes.com/specials-images/imageserve/411354685/960x0.jpg?height=474&width=711&fit=bounds"
+              src="https://images.pexels.com/photos/1181355/pexels-photo-1181355.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               alt="About image showcasing companies description"
               className="rounded-2xl object-cover shadow-sm h-[75vh] w-full"
               loading="lazy"
@@ -154,18 +154,17 @@ const About = () => {
             <h2 className="text-gray-50 p-2 text-center text-5xl font-semibold text-[#5C6FCD]">{heading.title}</h2>
             <p className="leading-1 mt-4 text-justify p-4 text-sky-200">{heading.description}</p>
           </div>
-          <div className="mt-10">
+          <div className="mt-4">
             <h3 className="mt-4 text-center">Our Services Include:</h3>
-            <div className="flex flex-wrap mt-20 gap-10 leading-8">
+            <div className="flex flex-wrap p-10 items-center justify-center mt-4 gap-8">
                 {ServiceData.map(item=>{
                   return(
-                    <div className="rounded-lg shadow-lg overflow-hidden w-[29vw] p-2 bg-white text-black hover:bg-[#1e40af] hover:text-[#fff]">
-                      <h4 className="p-2 font-bold text-center">{item.title}</h4>
+                    <div className="lg:w-[25vw] lg:h-[39vh] p-2 rounded-lg sm:w-[40vw] sm:h-[30vh] gap-10 bg-white text-black hover:bg-[#1e40af] hover:text-[#fff]">
+                      <h4 className="lg:text-[25px] sm:text-[15px] font-bold">{item.title}</h4>
                       <ul>
                       {item.description.map((desc) => (
-                        <li className="p-2 text-[12px] font-semibold" key={desc}>
+                        <li className=" sm:text-[8px] lg:text-[10px] font-semibold" key={desc}>
                           {desc}
-                        <br /> 
                         </li>
                       ))}
                       </ul>
@@ -179,11 +178,11 @@ const About = () => {
               {Primary.map(item=>{
                 return(
                   <>
-                  <div className="p-6 sm:text-xs mt-10 rounded-lg shadow-lg overflow-hidden w-[20vw] bg-white py-10 text-black hover:bg-[#1e40af] hover:text-[#fff]">
-                  <h5 className="sm:text-[2vw] lg:text-[1.2vw] font-semibold py-3">{item.title}</h5>
-                  <ul className="list-disc list-inside">
+                  <div className="p-2 mt-5 sm:text-[1.3vw] rounded-lg shadow-lg w-[20vw] lg:h-[30vh] sm:h-[23vw] bg-white text-black hover:bg-[#1e40af] hover:text-[#fff]">
+                  <h5 className=" font-semibold lg:text-[1.2vw] sm:text-[1.7vw]">{item.title}</h5>
+                  <ul className="list-disc py-5  list-inside">
                   {item.description.map((desc) => (
-                        <li className=" text-[10px] font-semibold" key={desc}>{desc}<br /> 
+                        <li className="lg:text-[1.05vw] sm:text-[1vw]" key={desc}>{desc}<br /> 
                         </li>
                   ))}
                   </ul>
@@ -195,23 +194,23 @@ const About = () => {
 
           <h4 className="font-semibold p-2 text-5xl text-center w-full text-[#fff] text-[5vw]"><span className="text-[#3b82f6]">Secondary</span> Keywords</h4>
           <p className="mt-4 mb-4 w-full text-center">These are the variations of the primary keywords, which may also rank and bring in additional traffic</p>
-          <div className=" mx-10 flex items-center justify-center w-full h-[30vh] gap-10 p-10 p-2 text-black">
+          <div className="sm:text-[1.3vw] my-5 flex flex-wrap lg:text-[1.2vw] flex items-center justify-center w-full h-[30vh] gap-10 p-10 p-2 text-black">
               {Secondary.map(item=>{
                 return(
                   <>
-                  <div className= "bg-[#fff] w-[27vw] h-[15vw] text-[#151515] rounded-lg shadow-lg overflow-hidden hover:bg-[#1e40af] hover:text-[#fff]">
-                    <h5 className="font-semibold text-[2.6vh] text-center p-4">{item.title}</h5>
-                    <p className="text-[15px] mt-2 px-2">{item.description}</p>
+                  <div className= "bg-[#fff] sm:w-[20vw] sm:h-[15vh] text-[#151515] lg:w-[25vw] lg:h-[20vh] rounded-lg shadow-lg overflow-hidden hover:bg-[#1e40af] hover:text-[#fff]">
+                    <h5 className="font-semibold text-[2.6vh] text-center sm:text-[1.5vw] p-4">{item.title}</h5>
+                    <p className="text-[15px] sm:text-[1vw] p-1">{item.description}</p>
                   </div>
                   </>
                 )
               })}
           </div>
-          <h4 className="font-semibold p-2 text-5xl text-center w-full text-[#fff] text-[5vw]">Ranking <span className="text-[#3b82f6]">Potential</span></h4>
-          <div className="mt-10 group flex flex-wrap gap-20 p-6 items-center w-full justify-center w-full">
+          <h4 className="font-semibold p-2 text-5xl text-center w-full text-[#fff] pt-20 text-[5vw]">Ranking <span className="text-[#3b82f6]">Potential</span></h4>
+          <div className="sm:text-[1.3vw] flex flex-wrap lg:text-[1.2vw] flex flex-wrap gap-10 p-4 items-center bg-white shadow-lg w-full mx-5 h-[45vh] justify-center ">
             {Ranking.map((item) => (
-              <div className="bg-[#fff] w-[20vw] h-[15vw] text-[#151515] p-2 rounded-lg shadow-lg overflow-hidden hover:bg-[#1e40af] hover:text-[#fff]">
-                <p className="text-[15px]  px-4 leading-1 mt-3 font-semibold">{item.description}</p>
+              <div className="bg-[#fff] lg:w-[20vw] lg:h-[16vw] sm:w-[22vw] sm:h-[19vh] text-[#151515] p-2 rounded-lg shadow-lg overflow-hidden hover:bg-[#1e40af] hover:text-[#fff]">
+                <p className="lg:text-[15px] mt-2 sm:text-[1.3vw] font-semibold">{item.description}</p>
               </div>
             ))}
           </div>
