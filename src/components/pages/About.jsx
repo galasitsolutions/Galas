@@ -139,7 +139,7 @@ const About = () => {
           <div className="flex justify-center items-center">Loading...</div>
         }
       >
-        <div className="about-us p-2 container mx-auto px-4">
+      <div className="about-us p-2 container mx-auto px-4">
         <div className="about-inner flex justify-center items-center flex-wrap gap-10 flex-col lg:flex-row p-2">
           <div className="about-img relative flex-1">
             <img
@@ -150,21 +150,21 @@ const About = () => {
             />
           </div>
 
-          <div className="info mt-10 px-2 py-2 gap-4 flex flex-col">
-            <h2 className="text-gray-50 p-2 text-center text-5xl font-semibold text-[#5C6FCD]">{heading.title}</h2>
-            <p className="leading-1 mt-4 text-justify p-4 text-sky-200">{heading.description}</p>
+          <div className="info services-card grid grid-cols-1 lg:grid-cols-1 gap-8">
+            <h1 className="text-gray-50 text-center font-semibold text-[#5C6FCD]">{heading.title}</h1>
+            <p className="text-justify text-sky-200">{heading.description}</p>
           </div>
-          <div className="mt-4">
-            <h3 className="mt-4 text-center">Our Services Include:</h3>
-            <div className="flex flex-wrap p-10 items-center justify-center mt-4 gap-8">
+          <div className="container mx-auto services-card grid grid-cols-1 lg:grid-cols-1 gap-8">
+            <h3  className="mt-4 text-center">Our Services Include:</h3>
+            <div className=" p-2 grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {ServiceData.map(item=>{
                   return(
-                    <div className="lg:w-[25vw] lg:h-[39vh] p-2 rounded-lg sm:w-[40vw] sm:h-[30vh] gap-10 bg-white text-black hover:bg-[#1e40af] hover:text-[#fff]">
-                      <h4 className="lg:text-[25px] sm:text-[15px] font-bold">{item.title}</h4>
+                    <div className=" p-2 rounded-lg gap-10 bg-white text-black hover:bg-[#1e40af] hover:text-[#fff]">
+                      <h2 className="font-bold">{item.title}</h2>
                       <ul>
                       {item.description.map((desc) => (
-                        <li className=" sm:text-[8px] lg:text-[10px] font-semibold" key={desc}>
-                          {desc}
+                        <li className="important-point flex items-center gap-2" key={desc}>
+                          <p className="text-sm">{desc}</p>
                         </li>
                       ))}
                       </ul>
@@ -173,46 +173,50 @@ const About = () => {
                   })}
               </div>
           </div>
-          <h4 className="font-semibold p-2 text-5xl text-center w-full text-[#fff] text-[5vw]"><span className="text-[#3b82f6]">Primary</span> Keywords</h4>
-          <div className="primary flex flex-wrap rounded-lg gap-10 p-5 fit-content">
+          <h2 className="font-semibold p-2 text-center w-full text-[#fff]"><span className="text-[#3b82f6]">Primary</span> Keywords</h2>
+          <div className="primary services-card grid grid-cols-1 lg:grid-cols-4 gap-8">
               {Primary.map(item=>{
                 return(
                   <>
-                  <div className="p-2 mt-5 sm:text-[1.3vw] rounded-lg shadow-lg w-[20vw] lg:h-[30vh] sm:h-[23vw] bg-white text-black hover:bg-[#1e40af] hover:text-[#fff]">
-                  <h5 className=" font-semibold lg:text-[1.2vw] sm:text-[1.7vw]">{item.title}</h5>
-                  <ul className="list-disc py-5  list-inside">
-                  {item.description.map((desc) => (
-                        <li className="lg:text-[1.05vw] sm:text-[1vw]" key={desc}>{desc}<br /> 
-                        </li>
-                  ))}
-                  </ul>
+                  <div className="rounded-lg shadow-lg bg-white text-black hover:bg-[#1e40af] hover:text-[#fff]">
+                    <h3 className="px-3 font-semibold">{item.title}</h3>
+                    <div className="flex items-center justify-center px-3">
+                      <ul className="list-disc list-inside">
+                      {item.description.map((desc) => (
+                            <li className="flex items-center gap-2" key={desc}><p className="text-sm">{desc}</p><br /> 
+                            </li>
+                      ))}
+                      </ul>
+                    </div>
                   </div>
                   </>
                 )
               })}
           </div>
-
-          <h4 className="font-semibold p-2 text-5xl text-center w-full text-[#fff] text-[5vw]"><span className="text-[#3b82f6]">Secondary</span> Keywords</h4>
-          <p className="mt-4 mb-4 w-full text-center">These are the variations of the primary keywords, which may also rank and bring in additional traffic</p>
-          <div className="sm:text-[1.3vw] my-5 flex flex-wrap lg:text-[1.2vw] flex items-center justify-center w-full h-[30vh] gap-10 p-10 p-2 text-black">
-              {Secondary.map(item=>{
+          <div className="flex flex-wrap items-center justify-center p-10">
+          <h2 className="font-semibold text-center w-full text-[#fff]"><span className="text-[#3b82f6]">Secondary</span> Keywords</h2>
+          <p className="w-full text-center text-md">These are the variations of the primary keywords, which may also rank and bring in additional traffic</p>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 text-black pt-10">
+            {Secondary.map(item=>{
                 return(
-                  <>
-                  <div className= "bg-[#fff] sm:w-[20vw] sm:h-[15vh] text-[#151515] lg:w-[25vw] lg:h-[20vh] rounded-lg shadow-lg overflow-hidden hover:bg-[#1e40af] hover:text-[#fff]">
-                    <h5 className="font-semibold text-[2.6vh] text-center sm:text-[1.5vw] p-4">{item.title}</h5>
-                    <p className="text-[15px] sm:text-[1vw] p-1">{item.description}</p>
+                  <div className= "bg-[#fff] text-[#151515] rounded-lg shadow-lg overflow-hidden hover:bg-[#1e40af] hover:text-[#fff]">
+                    <h3 className="font-semibold text-center p-4">{item.title}</h3>
+                    <p>{item.description}</p>
                   </div>
-                  </>
                 )
               })}
           </div>
-          <h4 className="font-semibold p-2 text-5xl text-center w-full text-[#fff] pt-20 text-[5vw]">Ranking <span className="text-[#3b82f6]">Potential</span></h4>
-          <div className="sm:text-[1.3vw] flex flex-wrap lg:text-[1.2vw] flex flex-wrap gap-10 p-4 items-center bg-white shadow-lg w-full mx-5 h-[45vh] justify-center ">
+          </div>
+          
+          <div className="container relative card bg-white grid grid-cols-1 pt-3 mx-auto lg:grid-cols-1 gap-10">
+          <h2 className="font-semibold text-center w-full text-black">Ranking <span className="text-[#3b82f6]">Potential</span></h2>
+          <div className="p-5 mb-5 grid grid-cols-1 gap-10 lg:grid-cols-3 bg-white shadow-lg">
             {Ranking.map((item) => (
-              <div className="bg-[#fff] lg:w-[20vw] lg:h-[16vw] sm:w-[22vw] sm:h-[19vh] text-[#151515] p-2 rounded-lg shadow-lg overflow-hidden hover:bg-[#1e40af] hover:text-[#fff]">
-                <p className="lg:text-[15px] mt-2 sm:text-[1.3vw] font-semibold">{item.description}</p>
+              <div className="bg-[#fff] text-[#151515] rounded-lg p-5 shadow-lg hover:bg-[#1e40af] hover:text-[#fff]">
+                <p className="font-semibold">{item.description}</p>
               </div>
             ))}
+          </div>
           </div>
         </div>
       </div>
