@@ -155,15 +155,15 @@ const About = () => {
           </div>
           <div className="container mx-auto services-card grid grid-cols-1 lg:grid-cols-1 gap-8">
             <h3  className="mt-4 text-center">Our Services Include:</h3>
-            <div className=" p-2 grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="p-2 grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {ServiceData.map(item=>{
                   return(
-                    <div className=" p-3 rounded-lg gap-10 bg-white text-black hover:bg-[#1e40af] hover:text-[#fff]">
-                      <h5 className="font-bold">{item.title}</h5>
+                    <div className=" p-2 rounded-lg gap-10 bg-white text-black hover:bg-[#1e40af] hover:text-[#fff]">
+                      <h4 className="font-bold">{item.title}</h4>
                       <ul>
                       {item.description.map((desc) => (
                         <li className="important-point pt-2 flex items-center gap-2" key={desc}>
-                          <p className="text-sm">{desc}</p>
+                          <p className="font-normal text-sm flex-grow">{desc}</p>
                         </li>
                       ))}
                       </ul>
@@ -172,50 +172,54 @@ const About = () => {
                   })}
               </div>
           </div>
-          <h2 className="font-semibold p-2 text-center w-full text-[#fff]"><span className="text-[#3b82f6]">Primary</span> Keywords</h2>
-          <div className="primary services-card grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-2 gap-8">
-              {Primary.map(item=>{
-                return(
-                  <>
-                  <div className="rounded-lg shadow-lg bg-white text-black hover:bg-[#1e40af] hover:text-[#fff]">
-                    <h5 className="p-3 text-sm font-bold">{item.title}</h5>
-                    <div className="flex items-center px-3 py-2 justify-center">
-                      <ul className="list-disc list-inside">
-                      {item.description.map((desc) => (
-                            <li className="flex items-center gap-2" key={desc}><p className="text-sm">{desc}</p><br /> 
-                            </li>
-                      ))}
-                      </ul>
-                    </div>
-                  </div>
-                  </>
-                )
-              })}
-          </div>
-          <div className="flex flex-wrap items-center justify-center p-10">
-          <h2 className="font-semibold text-center w-full text-[#fff]"><span className="text-[#3b82f6]">Secondary</span> Keywords</h2>
-          <p className="w-full text-center text-md">These are the variations of the primary keywords, which may also rank and bring in additional traffic</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 text-black pt-10">
-            {Secondary.map(item=>{
-                return(
-                  <div className= "bg-[#fff] text-[#151515] rounded-lg shadow-lg overflow-hidden hover:bg-[#1e40af] hover:text-[#fff]">
-                    <h5 className="font-bold pt-2 text-sm text-center">{item.title}</h5>
-                    <p className="p-3 text-md">{item.description}</p>
-                  </div>
-                )
-              })}
-          </div>
-          </div>
-          
-          <div className="container relative card bg-white grid grid-cols-1 pt-3 mx-auto lg:grid-cols-1 gap-10">
-          <h2 className="font-semibold text-center w-full text-black">Ranking <span className="text-[#3b82f6]">Potential</span></h2>
-          <div className="p-5 mb-5 grid grid-cols-1 gap-10 lg:grid-cols-3 bg-white shadow-lg">
-            {Ranking.map((item) => (
-              <div className="bg-[#fff] text-[#151515] rounded-lg p-5 shadow-lg hover:bg-[#1e40af] hover:text-[#fff]">
-                <p className="font-semibold">{item.description}</p>
+  
+          <h2 className="font-semibold p-2 text-center w-full text-[#fff]">
+            <span className="text-[#3b82f6]">Primary</span> Keywords
+          </h2>
+          <div className="primary grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {Primary.map((item, index) => (
+              <div key={index} className="rounded-lg shadow-lg bg-white text-black hover:bg-[#1e40af] hover:text-[#fff] h-64 flex flex-col">
+                <h4 className="p-2 font-bold">{item.title}</h4>
+                <div className="flex-grow flex justify-center">
+                  <ul className="list-disc p-1 list-inside">
+                    {item.description.map((desc, descIndex) => (
+                      <li className="flex items-center gap-2" key={descIndex}>
+                        <p className="font-normal text-sm flex-grow">{desc}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             ))}
           </div>
+          <div className="flex flex-wrap items-center justify-center p-10">
+            <h2 className="font-semibold text-center w-full text-[#fff]">
+              <span className="text-[#3b82f6]">Secondary</span> Keywords
+            </h2>
+            <p className="w-full text-center text-md">
+              These are the variations of the primary keywords, which may also rank and bring in additional traffic
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 text-black pt-10">
+              {Secondary.map((item, index) => (
+                <div key={index} className="bg-[#fff] text-[#151515] rounded-lg shadow-lg overflow-hidden h-64 hover:bg-[#1e40af] hover:text-[#fff] flex flex-col justify-between">
+                  <h4 className="font-bold pt-2 text-center">{item.title}</h4>
+                  <p className="font-normal p-2 text-sm flex-grow">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-wrap bg-white items-center justify-center p-10">
+            <h2 className="font-semibold text-center w-full text-black">
+              <span className="text-[#3b82f6]">Ranking</span> Potential
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 text-black pt-10">
+              {Ranking.map((item, index) => (
+                <div key={index} className="bg-[#fff] text-[#151515] rounded-lg shadow-lg overflow-hidden hover:bg-[#1e40af] hover:text-[#fff] flex flex-col justify-between h-64">
+                  <h4 className="font-bold pt-2 text-center">{item.title}</h4>
+                  <p className="font-normal text-sm p-2 flex-grow">{item.description}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
