@@ -122,14 +122,13 @@ const Secondary=[{
   description:"Low to medium competition, relevant for web development services targeting mobile optimization.",
 }]
 
-const Ranking=[{
-  description:"High-ranking keywords are those with broad appeal and strong competition. They can drive significant traffic but will require substantial SEO efforts, like SEO services, PPC advertising, and web development."
-},{
-  description:"Medium-ranking keywords are moderately competitive but still valuable for driving niche traffic. Examples include email marketing campaigns and IT project management."
-},{
-  description:"Low-ranking keywords typically have less competition, making it easier to rank for them. Although traffic may be lower, they can attract highly targeted audiences. Examples include contract to hire services and website maintenance services."
-}
-]
+const Ranking = [{
+  description: "High-ranking keywords are those with broad appeal and strong competition. They can drive significant traffic but will require substantial SEO efforts, such as SEO services, PPC advertising, and web development. Investing in content quality, backlink strategies, and ongoing optimization is essential to compete effectively in this space. Additionally, businesses must stay current with search engine algorithms and trends to maintain visibility."
+}, {
+  description: "Medium-ranking keywords are moderately competitive but still valuable for driving niche traffic. They often represent specific interests or needs, allowing businesses to connect with target audiences more effectively. Examples include email marketing campaigns and IT project management. Leveraging targeted content marketing and social media engagement can enhance visibility for these keywords, making them a worthwhile investment for growing brands."
+}, {
+  description: "Low-ranking keywords typically have less competition, making it easier to rank for them. Although traffic may be lower, they can attract highly targeted audiences who are looking for specific solutions. Examples include contract-to-hire services and website maintenance services. Focusing on long-tail keywords and local SEO strategies can help businesses capitalize on these opportunities, leading to higher conversion rates despite the lower traffic volume."
+}];
 
 const About = () => {
   return (
@@ -159,11 +158,11 @@ const About = () => {
             <div className=" p-2 grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {ServiceData.map(item=>{
                   return(
-                    <div className=" p-2 rounded-lg gap-10 bg-white text-black hover:bg-[#1e40af] hover:text-[#fff]">
-                      <h2 className="font-bold">{item.title}</h2>
+                    <div className=" p-3 rounded-lg gap-10 bg-white text-black hover:bg-[#1e40af] hover:text-[#fff]">
+                      <h5 className="font-bold">{item.title}</h5>
                       <ul>
                       {item.description.map((desc) => (
-                        <li className="important-point flex items-center gap-2" key={desc}>
+                        <li className="important-point pt-2 flex items-center gap-2" key={desc}>
                           <p className="text-sm">{desc}</p>
                         </li>
                       ))}
@@ -174,13 +173,13 @@ const About = () => {
               </div>
           </div>
           <h2 className="font-semibold p-2 text-center w-full text-[#fff]"><span className="text-[#3b82f6]">Primary</span> Keywords</h2>
-          <div className="primary services-card grid grid-cols-1 lg:grid-cols-4 gap-8">
+          <div className="primary services-card grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-2 gap-8">
               {Primary.map(item=>{
                 return(
                   <>
                   <div className="rounded-lg shadow-lg bg-white text-black hover:bg-[#1e40af] hover:text-[#fff]">
-                    <h3 className="px-3 font-semibold">{item.title}</h3>
-                    <div className="flex items-center justify-center px-3">
+                    <h5 className="p-3 text-sm font-bold">{item.title}</h5>
+                    <div className="flex items-center px-3 py-2 justify-center">
                       <ul className="list-disc list-inside">
                       {item.description.map((desc) => (
                             <li className="flex items-center gap-2" key={desc}><p className="text-sm">{desc}</p><br /> 
@@ -196,12 +195,12 @@ const About = () => {
           <div className="flex flex-wrap items-center justify-center p-10">
           <h2 className="font-semibold text-center w-full text-[#fff]"><span className="text-[#3b82f6]">Secondary</span> Keywords</h2>
           <p className="w-full text-center text-md">These are the variations of the primary keywords, which may also rank and bring in additional traffic</p>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 text-black pt-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 text-black pt-10">
             {Secondary.map(item=>{
                 return(
                   <div className= "bg-[#fff] text-[#151515] rounded-lg shadow-lg overflow-hidden hover:bg-[#1e40af] hover:text-[#fff]">
-                    <h3 className="font-semibold text-center p-4">{item.title}</h3>
-                    <p>{item.description}</p>
+                    <h5 className="font-bold pt-2 text-sm text-center">{item.title}</h5>
+                    <p className="p-3 text-md">{item.description}</p>
                   </div>
                 )
               })}
