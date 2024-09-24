@@ -1,9 +1,12 @@
 import MainLayout from "../layout/MainLayout";
+import UpcomingProducts from "../section/UpcomingProducts";
+import ContactUs from "../section/ContactUs";
 
 const Event = () => {
   return (
     <MainLayout>
-      <div>Events</div>
+          <UpcomingProducts />
+          <ContactUs />
     </MainLayout>
   );
 };
