@@ -1,0 +1,58 @@
+
+.event-box{
+  margin: 1.5rem;
+  padding: 1.5rem ;
+}
+.bbox{
+    background:url(https://imgs.search.brave.com/GhzM5E9w9bKgsCrjVrE_7jPB-st5rt6ha6jw6zLVKCE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTYz/MzI4MzU0NC9waG90/by9ncm91cC1vZi1t/dWx0aXJhY2lhbC1h/c2lhbi1idXNpbmVz/cy1wYXJ0aWNpcGFu/dHMtY2FzdWFsLWNo/YXQtYWZ0ZXItc3Vj/Y2Vzc2Z1bC1jb25m/ZXJlbmNlLWV2ZW50/LndlYnA_Yj0xJnM9/NjEyeDYxMiZ3PTAm/az0yMCZjPVZ6bnpw/MXFldHNyaHBIeFlH/UVE5MFFnRXdDSEcy/RTliSmgyRmk0SGU5/VUE9);
+    -webkit-background-size:cover;
+    background-size:cover;
+    background-position:center center;
+    width:300px;
+    height: 300px;
+    box-shadow: 0 20px 5px 5px rgba(0,0,0,0.2);
+    animation: animate 5s ease-in-out infinite;
+    transition:all 1s ease-in-out;  
+  }
+
+
+  @keyframes animate{
+  0%{
+    border-radius:60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+  50%{
+    border-radius:60% 40% 30% 70%/50% 60% 30% 60%;
+  }
+    100%{
+    border-radius:60% 40% 30% 70%/50% 60% 30% 60%;
+  }
+}
+
+.event-content{
+  color: white;
+  background-color:#4e54c8;
+  border: 1px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.event-info{
+  align-items: center;
+  margin: auto;
+}
+
+  @media screen and (max-width:370px) {
+    .bbox{
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  // .event-area{
+    
+  //   height:auto;
+  //   @media only screen and (max-width: 500px){
+  //     flex-wrap: wrap;
+      
+  //   }
+  // }
