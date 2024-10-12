@@ -1,13 +1,16 @@
 import MainLayout from "../layout/MainLayout";
 import React,{ Suspense } from "react";
+import Card from "../ui/Card";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import Button from "../ui/Button";
+import { useState } from "react";
 
 const heading={
   image:"https://imageio.forbes.com/specials-images/imageserve/411354685/960x0.jpg?height=474&width=711&fit=bounds",
-  title: "Galas IT Solution",
   description: "Galas IT Solution is a leading provider of digital marketing services, IT solutions, and staffing services that empower businesses to thrive in today’s digital landscape. With years of industry experience, we specialize in offering innovative and results-driven solutions tailored to meet the unique needs of our clients.Our core mission is to deliver value through expertise, ensuring that businesses achieve their goals through cutting-edge technology, data-driven marketing strategies, and expert talent acquisition. From SEO management to IT consulting, we provide comprehensive solutions that enhance your business performance and maximize ROI.",
 }
 
-const ServiceData=[{
+const Service=[{
   title: "Digital Marketing Services",
   description:["SEO Management – Improve your website's search engine ranking and drive organic traffic with our expert SEO services, designed to increase visibility on search engines like Google.",
   "PPC (Pay-Per-Click) Advertising – Create high-quality, targeted ads that drive traffic to your website, increasing website traffic and revenue.",
@@ -29,8 +32,7 @@ const ServiceData=[{
   "Contract Staffing – Meet your short-term or project-based staffing requirements with our contract staffing solutions, providing skilled professionals on demand.",
 	"Contract to Hire – Evaluate potential hires before making permanent commitments with our flexible contract-to-hire services, ensuring you hire the best fit for your team."]
 
-}
-]
+}]
 
 const Primary = [
   {
@@ -131,6 +133,9 @@ const Ranking = [{
 }];
 
 const About = () => {
+  const [ServiceData,setServiceData]=useState(Service);
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <MainLayout>
       <Suspense
@@ -138,8 +143,10 @@ const About = () => {
           <div className="flex justify-center items-center">Loading...</div>
         }
       >
+      <section className="product relative">
+      <div className="section-space"></div>
       <div className="about-us p-2 container mx-auto px-4">
-        <div className="about-inner flex justify-center items-center flex-wrap gap-10 flex-col lg:flex-row p-2">
+        <div className="product-inner container mx-auto px-4 flex flex-col">
           <div className="about-img relative flex-1">
             <img
               src="https://images.pexels.com/photos/1181355/pexels-photo-1181355.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -149,49 +156,91 @@ const About = () => {
             />
           </div>
 
-          <div className="info services-card grid grid-cols-1 lg:grid-cols-1 gap-8">
-            <h1 className="text-gray-50 text-center font-semibold text-[#5C6FCD]">{heading.title}</h1>
-            <p className="text-justify text-sky-200">{heading.description}</p>
+          <div className="product flex justify-center items-center p-2 lg:p-4 lg:gap-2">
+            <article className="relative flex flex-col">
+              <h2 className="content-heading text-center font-heading font-semibold mb-5">
+                Galas IT <span className="text-blue-600">Solutions</span>
+              </h2>
+              <p className="text-xs text-center">
+                {heading.description}
+              </p>
+            </article>
           </div>
+          <div className="section-space"></div>
           <div className="container mx-auto services-card grid grid-cols-1 lg:grid-cols-1 gap-8">
-            <h3  className="mt-4 text-center">Our Services Include:</h3>
-            <div className="p-2 grid grid-cols-1 lg:grid-cols-3 gap-8">
-                {ServiceData.map(item=>{
-                  return(
-                    <div className=" p-2 rounded-lg gap-10 bg-white text-black hover:bg-[#1e40af] hover:text-[#fff]">
-                      <h4 className="font-bold">{item.title}</h4>
-                      <ul>
-                      {item.description.map((desc) => (
-                        <li className="important-point pt-2 flex items-center gap-2" key={desc}>
-                          <p className="font-normal text-sm flex-grow">{desc}</p>
-                        </li>
-                      ))}
+            <h3  className="content-heading text-center font-heading font-semibold">Our Services Include:</h3>
+            <section className="product relative text-black">
+              <div className="services-card grid grid-cols-1 lg:grid-cols-3 gap-8">
+                {ServiceData.map((item, index) => (
+                    <div
+                    key={index}
+                    className={`card-digital bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform-gpu`}
+                  >
+                    <div className="flex flex-col gap-4 h-full p-4">
+                      <div className="flex items-center gap-2">
+                        <CheckCircleIcon
+                          className={`w-6 h-6 ${isHovered ? "text-white" : "text-blue-600"}`}
+                        />
+                        <h4 id={item.title} className="card-heading font-semibold text-lg">
+                          {item.title}
+                        </h4>
+                      </div>
+
+                      <div className="feature flex flex-col gap-2">
+                        <h5 className="font-medium text-md">Features</h5>
+                        <ul className="important flex flex-col gap-2">
+                          {item.description.map((feature, featureIndex) => (
+                            <li
+                              className="important-point flex items-center gap-2"
+                              key={featureIndex}
+                            >
+                              <CheckCircleIcon
+                                className={`w-6 h-6 ${isHovered ? "text-white" : "text-blue-600"}`}
+                              />
+                              <p className="text-sm">{feature}</p>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="product-btn mt-auto">
+                        <Button text="Learn More" />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </div>
+
+
+          <div>
+            <div className="section-space"></div>
+            <h2 className="content-heading text-center font-heading font-semibold">
+              Primary<span className="text-[#3b82f6]"> Keywords</span> 
+            </h2>
+            <div className="section-space"></div>
+            <section className="product relative text-black">
+              <div className="services-card grid grid-cols-1 lg:grid-cols-4 gap-8">
+              {Primary.map((item, index) => (
+                <div key={index} className="card-digital rounded-lg bg-white shadow-lg overflow-hidden transition-transform transform-gpu">
+                  <div  className="flex flex-col gap-4 h-full p-4">
+                    <h4 className="card-heading font-semibold text-lg">{item.title}</h4>
+                    <div className="flex-grow flex justify-center">
+                      <ul className="list-disc p-1 list-inside">
+                        {item.description.map((desc, descIndex) => (
+                          <li className="flex items-center gap-2" key={descIndex}>
+                            <p className="font-normal text-sm flex-grow">{desc}</p>
+                          </li>
+                        ))}
                       </ul>
                     </div>
-                    )
-                  })}
-              </div>
-          </div>
-  
-          <h2 className="font-semibold p-2 text-center w-full text-[#fff]">
-            <span className="text-[#3b82f6]">Primary</span> Keywords
-          </h2>
-          <div className="primary grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {Primary.map((item, index) => (
-              <div key={index} className="rounded-lg shadow-lg bg-white text-black hover:bg-[#1e40af] hover:text-[#fff] h-64 flex flex-col">
-                <h4 className="p-2 font-bold">{item.title}</h4>
-                <div className="flex-grow flex justify-center">
-                  <ul className="list-disc p-1 list-inside">
-                    {item.description.map((desc, descIndex) => (
-                      <li className="flex items-center gap-2" key={descIndex}>
-                        <p className="font-normal text-sm flex-grow">{desc}</p>
-                      </li>
-                    ))}
-                  </ul>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+          </section>
           </div>
+          
           <div className="flex flex-wrap items-center justify-center p-10">
             <h2 className="font-semibold text-center w-full text-[#fff]">
               <span className="text-[#3b82f6]">Secondary</span> Keywords
@@ -223,6 +272,7 @@ const About = () => {
           </div>
         </div>
       </div>
+      </section>
       </Suspense>
     </MainLayout>
   );
