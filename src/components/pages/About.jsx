@@ -242,34 +242,57 @@ const About = () => {
           </div>
           
           <div className="flex flex-wrap items-center justify-center p-10">
-            <h2 className="font-semibold text-center w-full text-[#fff]">
-              <span className="text-[#3b82f6]">Secondary</span> Keywords
-            </h2>
-            <p className="w-full text-center text-md">
-              These are the variations of the primary keywords, which may also rank and bring in additional traffic
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 text-black pt-10">
-              {Secondary.map((item, index) => (
-                <div key={index} className="bg-[#fff] text-[#151515] rounded-lg shadow-lg overflow-hidden h-64 hover:bg-[#1e40af] hover:text-[#fff] flex flex-col justify-between">
-                  <h4 className="font-bold pt-2 text-center">{item.title}</h4>
-                  <p className="font-normal p-2 text-sm flex-grow">{item.description}</p>
+            <section className="product relative text-white">
+              <div className="section-space"></div>
+              <article className="relative flex flex-col">
+                <h2 className="content-heading text-center font-heading font-semibold">
+                  Secondary<span className="text-blue-500"> Keyword</span>
+                </h2>
+                <p className="text-xs text-center">
+                These are variations of the primary keywords, which may also rank and bring in additional traffic.
+                </p>
+              </article>
+              <div className="section-space"></div>
+              <section className="services relative">
+                <div className="services-card grid grid-cols-1 lg:grid-cols-3 gap-8">
+                  {Secondary.map((item, index) => (
+                    <article className="card-content bg-white text-black flex flex-col gap-4 h-full p-4 card-digital rounded-lg bg-white shadow-lg overflow-hidden transition-transform transform-gpu">
+                      <div className="flex items-center gap-2">
+                        <h4 id={item.title} className="card-heading font-semibold text-lg">
+                          {item.title}
+                        </h4>
+                      </div>
+                      <p id={item.description} className="font-normal text-sm flex-grow">
+                        {item.description}
+                      </p>
+                    </article>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </section>
+            </section>
           </div>
-          <div className="flex flex-wrap bg-white items-center justify-center p-10">
-            <h2 className="font-semibold text-center w-full text-black">
-              <span className="text-[#3b82f6]">Ranking</span> Potential
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 text-black pt-10">
+        </div>
+
+
+        <div className="section-space"></div>
+        <div className="flex flex-wrap items-center bg-white justify-center p-10">
+          <section className="product relative text-white">
+            <article className="relative flex flex-col">
+                  <h2 className="content-heading text-center text-black font-heading font-semibold">
+                    Ranking <span className="text-blue-500">Potential</span>
+                  </h2>
+            </article>
+            <div className="section-space"></div>
+            <div className="services-card grid grid-cols-1 lg:grid-cols-3 gap-8">
               {Ranking.map((item, index) => (
-                <div key={index} className="bg-[#fff] text-[#151515] rounded-lg shadow-lg overflow-hidden hover:bg-[#1e40af] hover:text-[#fff] flex flex-col justify-between h-64">
-                  <h4 className="font-bold pt-2 text-center">{item.title}</h4>
-                  <p className="font-normal text-sm p-2 flex-grow">{item.description}</p>
-                </div>
+                <article className="card-content bg-white text-black flex flex-col gap-4 h-full p-4 card-digital rounded-lg bg-white shadow-lg overflow-hidden transition-transform transform-gpu">
+                  <div className="flex items-center gap-2">
+                    <p className="font-normal text-sm flex-grow">{item.description}</p>
+                  </div>
+                </article>
               ))}
             </div>
-          </div>
+          </section>
         </div>
       </div>
       </section>
