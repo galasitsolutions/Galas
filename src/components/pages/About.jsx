@@ -4,6 +4,8 @@ import Card from "../ui/Card";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import Button from "../ui/Button";
 import { useState } from "react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 const heading={
   image:"https://imageio.forbes.com/specials-images/imageserve/411354685/960x0.jpg?height=474&width=711&fit=bounds",
@@ -132,6 +134,26 @@ const Ranking = [{
   description: "Low-ranking keywords typically have less competition, making it easier to rank for them. Although traffic may be lower, they can attract highly targeted audiences who are looking for specific solutions. Examples include contract-to-hire services and website maintenance services. Focusing on long-tail keywords and local SEO strategies can help businesses capitalize on these opportunities, leading to higher conversion rates despite the lower traffic volume."
 }];
 
+const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 5
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1
+  }
+};
+
 const About = () => {
   const [ServiceData,setServiceData]=useState(Service);
   const [isHovered, setIsHovered] = useState(false);
@@ -214,32 +236,37 @@ const About = () => {
 
 
           <div>
-            <div className="section-space"></div>
-            <h2 className="content-heading text-center font-heading font-semibold">
-              Primary<span className="text-[#3b82f6]"> Keywords</span> 
-            </h2>
-            <div className="section-space"></div>
-            <section className="product relative text-black">
-              <div className="services-card grid grid-cols-1 lg:grid-cols-4 gap-8">
-              {Primary.map((item, index) => (
-                <div key={index} className="card-digital rounded-lg bg-white shadow-lg overflow-hidden transition-transform transform-gpu">
-                  <div  className="flex flex-col gap-4 h-full p-4">
-                    <h4 className="card-heading font-semibold text-lg">{item.title}</h4>
-                    <div className="flex-grow flex justify-center">
-                      <ul className="list-disc p-1 list-inside">
-                        {item.description.map((desc, descIndex) => (
-                          <li className="flex items-center gap-2" key={descIndex}>
-                            <p className="font-normal text-sm flex-grow">{desc}</p>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
+      <div className="section-space"></div>
+      <h2 className="content-heading text-center font-heading font-semibold">
+        Primary<span className="text-[#3b82f6]"> Keywords</span> 
+      </h2>
+      <div className="section-space"></div>
+      <section className="container mx-auto product relative text-black">
+        <Carousel 
+          responsive={responsive}
+          showDots={false}
+          className="carousel"
+          itemClass="carousel-item"
+        >
+          {Primary.map((item, index) => (
+            <div key={index} className="card-digital flex flex-col justify-between rounded-lg bg-white shadow-lg overflow-hidden mx-1" style={{ width: '300px', height: '200px' }}>
+              <div className="flex flex-col gap-2 h-full p-4">
+                <h4 className="card-heading font-semibold text-lg">{item.title}</h4>
+                <div className="flex-grow flex justify-center">
+                  <ul className="list-disc p-1 list-inside">
+                    {item.description.map((desc, descIndex) => (
+                      <li className="flex items-center gap-2" key={descIndex}>
+                        <p className="font-normal text-sm flex-grow">{desc}</p>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              ))}
+              </div>
             </div>
-          </section>
-          </div>
+          ))}
+        </Carousel>
+      </section>
+    </div>
           
           <div className="flex flex-wrap items-center justify-center p-10">
             <section className="product relative text-white">
