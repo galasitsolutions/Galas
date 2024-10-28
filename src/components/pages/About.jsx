@@ -273,7 +273,7 @@ const About = () => {
               <div className="section-space"></div>
               <article className="relative flex flex-col">
                 <h2 className="content-heading text-center font-heading font-semibold">
-                  Secondary<span className="text-blue-500"> Keyword</span>
+                  Secondary<span className="text-blue-500"> Keywords</span>
                 </h2>
                 <p className="text-xs text-center">
                 These are variations of the primary keywords, which may also rank and bring in additional traffic.
