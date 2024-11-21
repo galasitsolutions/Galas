@@ -1,6 +1,8 @@
 import FooterContent from "../ui/FooterContent";
 import galas from "../../assets/img/icons/galas-it-solutions.png";
 
+
+
 const footerData = {
   logoSrc: galas,
   contactEmail: "info@galasitsolutions.com",
