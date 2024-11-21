@@ -9,11 +9,11 @@ const Blog = () => {
     <MainLayout>
       <Suspense
         fallback={
-          <div className="flex justify-center items-center">Loading...</div>
+          <div className="flex justify-center items-center">Loading....</div>
         }
       >
         <OurblogContent></OurblogContent>
-          <BlogSection></BlogSection>
+        <BlogSection></BlogSection>
       </Suspense>
     </MainLayout>
   );
