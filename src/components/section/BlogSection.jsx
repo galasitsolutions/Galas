@@ -9,7 +9,7 @@ export default function BlogSection() {
 
     const getApiData = async () => {
         try {
-            const res = await axios.get("http://localhost:3000/api/post/all-blogs");
+            const res = await axios.get("https://galasback.onrender.com/api/post/all-blogs");
             setMyData(res.data);
             console.log(res);
         } catch (error) {
@@ -40,14 +40,17 @@ export default function BlogSection() {
                             <section className="features relative px-4">
                                 {isError && <h2>{isError}</h2>}
                                 <div className="feature-card grid px-2 grid-cols-1 lg:grid-cols-4 gap-8">
-                                    {blogData.slice(0,4).map((post) => {
-                                        const { _id, title, content } = post;
+                                    {blogData.slice(4,8).map((post) => {
+                                        const { _id,imageUrl, title, content, author,createdAt } = post;
                                         return (
                                             <Link to={`/blog/${_id}`} >
                                             <FeatureCard
                                                 key={_id}
+                                                imageUrl={imageUrl}
                                                 title={title}
-                                                description={content}
+                                                content={content}
+                                                author={author}
+                                                createdAt={createdAt}
                                             >
                                                 {title}
                                             </FeatureCard>

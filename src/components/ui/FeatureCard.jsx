@@ -1,8 +1,7 @@
 import PropTypes from "prop-types";
-import blogImg from "../../assets/img/product/work.webp";
 import { useState } from "react";
 
-const FeatureCard = ({ date, title, content }) => {
+const FeatureCard = ({createdAt , title, content, author, imageUrl}) => {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
@@ -17,7 +16,7 @@ const FeatureCard = ({ date, title, content }) => {
             <article className="card-content  divide-x-2 divide-slate-300 flex flex-col h-full">
                 <div>
                     <img
-                        src={blogImg}
+                        src={imageUrl}
                         alt="blog image showcasing companies Blogs"
                         className="object-cover aspect-squre shadow-sm sm:h-[30vh] md:h-[30vh]"
                         loading="lazy"
@@ -26,24 +25,26 @@ const FeatureCard = ({ date, title, content }) => {
                     />
                 </div>
                 <div className="p-4">
-                    <p id={date} className="font-thin mb-2 text-gray-400 text-sm"><small>{date}</small></p>
+                <p id={createdAt} className="font-thin mb-2 text-gray-400 text-sm"><small>{createdAt}</small></p>
                     <h4 id={title} className="card-heading mb-2 font-bold text-lg">
                         {title}
                     </h4>
-                    <p id={content} className="font-thin text-gray-400 text-sm flex-grow">
+                    <p id={content} className="font-normal  text-gray-400 text-sm flex-grow">
                         {content}
                     </p>
-                    <div className="section-space"></div>
+                    <p id={author} className="font-semibold mb-2 text-gray-800 text-md"><small>- {author}</small></p>
                 </div>
+                {/* <div className="section-space"></div> */}
             </article>
         </section>
     );
 };
 
 FeatureCard.propTypes = {
-    date: PropTypes.string,
+    createdAt: PropTypes.string,
     title: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired,
+    imageUrl:PropTypes.string.isRequired,
 };
 
 export default FeatureCard;

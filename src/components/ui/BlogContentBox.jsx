@@ -1,6 +1,6 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function BlogContentBox() {
   const [blogData, setBlogData] = useState([]);
@@ -8,7 +8,9 @@ function BlogContentBox() {
 
   const getBlogs = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/post/all-blogs");
+      const res = await axios.get(
+        "https://galasback.onrender.com/api/post/all-blogs"
+      );
       setBlogData(res.data);
     } catch (error) {
       setIsError(error.message);
@@ -26,10 +28,13 @@ function BlogContentBox() {
       {!isError && blogData.length === 0 && <p>No blogs available.</p>}
       <ul className="list-none p-0">
         {blogData.map((post) => {
-          const { _id, title } = post;
+          const { _id, imageUrl, createdAt, title, content } = post;
           return (
             <li key={_id} className="mb-2">
-              <Link to={`/blog/${_id}`} className="text-blue-600 cursor-pointer">
+              <Link
+                to={`/blog/${_id}`}
+                className="text-blue-600 cursor-pointer"
+              >
                 {title}...
               </Link>
             </li>
