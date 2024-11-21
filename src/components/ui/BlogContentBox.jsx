@@ -8,7 +8,7 @@ function BlogContentBox() {
 
   const getBlogs = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/post/all-blogs");
+      const res = await axios.get("https://galasback.onrender.com/api/post/all-blogs");
       setBlogData(res.data);
     } catch (error) {
       setIsError(error.message);

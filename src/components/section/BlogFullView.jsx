@@ -19,7 +19,7 @@ function BlogFullView({title,content}) {
     useEffect(()=>{
         const fetchBlog = async () =>{
             try {
-                const { data } = await axios.get(`http://localhost:3000/api/post/${id}`,{
+                const { data } = await axios.get(`https://galasback.onrender.com/api/post/${id}`,{
                     headers:{"Content-Type": "multipart/form-data"},
                 });
                 console.log(data);
