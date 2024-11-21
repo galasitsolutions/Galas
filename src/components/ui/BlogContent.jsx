@@ -13,7 +13,7 @@ const [isError, setIsError] = useState("");
 
 const getApi_Data = async () => {
     try {
-        const res = await axios.get("http://localhost:3000/api/post/all-blogs");
+        const res = await axios.get("https://galasback.onrender.com/api/post/all-blogs");
         setMy_Data(res.data);
         console.log(res);
     } catch (error) {
@@ -30,7 +30,7 @@ useEffect(() => {
              <section className="container mx-auto px-4 flex flex-col gap-10 lg:flex-row justify-center items-stretch">
                         <div className="info-box flex items-center">
                             <article className="content flex flex-col items-center text-center gap-6">
-                                <p className="section-title p-4r"> <span className="line bg-blue-800 font-semibold"></span>OUR BLOGS</p>
+                                <p className="section-title p-4r"> <span className="line bg-blue-800 font-semibold"></span>Our Blogs</p>
                                 <h2 id="hero-heading" className=" font-heading font-semibold  mb-4"> We re{" "}
                                     <span style={{ color: "#2563eb" }}>Bridging Talented<br></br> Vision for</span>{" "}
                                     Unmatched Success</h2>

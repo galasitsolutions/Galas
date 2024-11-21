@@ -8,7 +8,7 @@ export default function BlogSection() {
 
     const getApiData = async () => {
         try {
-            const res = await axios.get("http://localhost:3000/api/post/all-blogs");
+            const res = await axios.get("https://galasback.onrender.com/api/post/all-blogs");
             setMyData(res.data);
             console.log(res);
         } catch (error) {
