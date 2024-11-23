@@ -8,7 +8,7 @@ const BlogCard = ({imageUrl, createdAt, title, content }) => {
               <div className="w-full h-[0.5px] rounded-full bg-slate-800 mb-4"></div>
             <article className="card-content flex flex-col lg:flex-row gap-2">
               
-                <div className="basis-2/5">
+                <div className="lg:w-2/5">
                     <img
                         src={imageUrl}
                         alt="blog image showcasing companies Blogs"
@@ -17,12 +17,12 @@ const BlogCard = ({imageUrl, createdAt, title, content }) => {
                     
                     />
                 </div>
-                <div className="px-2 pb-2 basis-4/5 flex flex-col">
+                <div className="px-2 pb-2 lg:w-3/5 flex flex-col">
                     <p id={createdAt} className="font-thin mb-2 text-gray-400 text-sm"><small>{createdAt}</small></p>
                     <h4 id={title} className="card-heading mb-2 font-bold text-lg">
                         {title}
                     </h4>
-                    <p id={content} className="font-normal  text-gray-400 mb-2 text-sm flex-grow">
+                    <p id={content} className="font-normal lg-BlogContent text-gray-400 mb-2 text-sm flex-grow">
                         {content}
                     </p>
                     
