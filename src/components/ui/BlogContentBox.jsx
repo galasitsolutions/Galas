@@ -20,7 +20,7 @@ function BlogContentBox() {
   }, []);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col ">
       <h3 className="text-lg font-semibold mb-4">Other Blogs...</h3>
       {isError && <p className="text-red-500">{isError}</p>}
       {!isError && blogData.length === 0 && <p>No blogs available.</p>}

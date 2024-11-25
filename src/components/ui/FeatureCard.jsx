@@ -26,10 +26,10 @@ const FeatureCard = ({createdAt , title, content, author, imageUrl}) => {
                 </div>
                 <div className="p-4">
                 <p id={createdAt} className="font-thin mb-2 text-gray-400 text-sm"><small>{createdAt}</small></p>
-                    <h4 id={title} className="card-heading mb-2 font-bold text-lg">
+                    <h4 id={title} className="card-heading blogContent mb-2 font-bold text-lg">
                         {title}
                     </h4>
-                    <p id={content} className="font-normal  text-gray-400 text-sm flex-grow">
+                    <p id={content} className="font-normal  text-gray-400 text-sm flex-grow blogContent">
                         {content}
                     </p>
                     <p id={author} className="font-semibold mb-2 text-gray-800 text-md"><small>- {author}</small></p>

@@ -15,7 +15,7 @@ const Blog = () => {
     useEffect(()=>{
         const fetchBlog = async () =>{
             try {
-                const { data } = await axios.get(`http://localhost:3000/api/post/blog/${id}`,{
+                const { data } = await axios.get(`https://galasback.onrender.com/api/post/blog/${id}`,{
                     headers:{"Content-Type": "multipart/form-data"},
                 });
                 console.log(data);
