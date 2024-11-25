@@ -1,6 +1,7 @@
 import axios from "axios";
 import FeatureCard from "../ui/FeatureCard";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function BlogSection() {
     const [blogData, setMyData] = useState([]);
@@ -42,6 +43,7 @@ export default function BlogSection() {
                                     {blogData.slice(4,8).map((post) => {
                                         const { _id,imageUrl, title, content, author,createdAt } = post;
                                         return (
+                                            <Link to={`/blog/${_id}`} >
                                             <FeatureCard
                                                 key={_id}
                                                 imageUrl={imageUrl}
@@ -52,6 +54,7 @@ export default function BlogSection() {
                                             >
                                                 {title}
                                             </FeatureCard>
+                                            </Link>
                                         );
                                     })}
                                 </div>

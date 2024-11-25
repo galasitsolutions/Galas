@@ -22,7 +22,7 @@ const BlogCard = ({imageUrl, createdAt, title, content }) => {
                     <h4 id={title} className="card-heading mb-2 font-bold text-lg">
                         {title}
                     </h4>
-                    <p id={content} className="font-normal font-thin text-gray-400 mb-2 text-sm flex-grow">
+                    <p id={content} className="font-normal  text-gray-400 mb-2 text-sm flex-grow">
                         {content}
                     </p>
                     

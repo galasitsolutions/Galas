@@ -29,7 +29,7 @@ const FeatureCard = ({createdAt , title, content, author, imageUrl}) => {
                     <h4 id={title} className="card-heading mb-2 font-bold text-lg">
                         {title}
                     </h4>
-                    <p id={content} className="font-normal font-thin text-gray-400 text-sm flex-grow">
+                    <p id={content} className="font-normal  text-gray-400 text-sm flex-grow">
                         {content}
                     </p>
                     <p id={author} className="font-semibold mb-2 text-gray-800 text-md"><small>- {author}</small></p>

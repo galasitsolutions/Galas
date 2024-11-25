@@ -72,7 +72,7 @@ useEffect(() => {
                                 </div>
                             </div>
                             <div className="content items-start  flex flex-col justify-start text-start">
-                                <div className="blog-inner flex justify-end items-start flex-col gap-4 flex-col lg:flex-row">
+                                <div className="blog-inner flex justify-end items-start gap-4 flex-col lg:flex-row">
                                     <section className="features relative ">
                                         <div className="feature-card flex flex-col lg:flex-row  "> {/* grid grid-rows-1 lg:grid-rows-3 */}
                                         {isError && <h2>{isError}</h2>}
