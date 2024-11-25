@@ -12,7 +12,7 @@ const BlogCard = ({imageUrl, createdAt, title, content }) => {
                     <img
                         src={imageUrl}
                         alt="blog image showcasing companies Blogs"
-                        className="object-cover aspect-squre shadow-sm  h-50%"
+                        className="object-cover aspect-squre shadow-sm "
                         loading="lazy"
                     
                     />

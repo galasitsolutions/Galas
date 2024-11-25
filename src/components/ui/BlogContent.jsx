@@ -43,7 +43,7 @@ useEffect(() => {
                    
 
                     <div className="content flex-row items-center text-start relative">
-                        <div className="content flex flex-col basis-5/2 lg:flex-row justify-start p-2 text-center gap-10 relative">
+                        <div className="content flex flex-col lg:flex-row justify-start p-2 basis-5/2 text-center gap-10 relative">
                             <div className="content  flex flex-col items-start text-start">
                                 <div className="content flex flex-col text-start gap-6">
                                     
