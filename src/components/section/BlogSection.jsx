@@ -24,9 +24,9 @@ export default function BlogSection() {
     return (
         <>
             <div className="section-space" aria-hidden="true"></div>
-            <section className="outer-blog container mx-auto">
+            <section className="outer-blog bg-neutral-200 text-black">
                 <div className="section-space"></div>
-                <section className="feature relative px-4 bg-neutral-200 text-black">
+                <section className="feature relative px-4">
                     <div className="section-space"></div>
                     <div className="feature-inner container mx-auto flex flex-col">
                         <div className="feature flex justify-start px-4 items-start lg:gap-2">

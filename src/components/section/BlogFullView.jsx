@@ -34,7 +34,7 @@ function BlogFullView({title,content}) {
   return (
     <div className="flex flex-wrap font-sans ">
       {/* Sidebar */}
-      <aside className="w-1/4 p-5 bg-gray-100 flex flex-col">
+      <aside className="w-1/4 p-5 bg-gray-100  flex-col hidden lg:block">
         
         <BlogContentBox/>
         
@@ -50,7 +50,7 @@ function BlogFullView({title,content}) {
       </aside>
 
       {/* Main Content */}
-      <main className="w-3/4 p-5">
+      <main className="lg:w-3/4 p-5">
         <section className="mb-6">
           <h4 className="text-gray-700" id={title} >{title}</h4>
            <hr style={{borderColor: '#666',borderWidth:'1',borderStyle:'solid'}} /><br />

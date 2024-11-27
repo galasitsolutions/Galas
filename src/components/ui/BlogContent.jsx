@@ -1,7 +1,8 @@
-import blogImg from "../../assets/img/product/work.webp";
+
 import {useEffect,useState} from "react";
 import BlogCard from "./BlogCard";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 
 
@@ -37,21 +38,23 @@ useEffect(() => {
                             </article>
                         </div>
                     </section>
-            <section className="blogContent container mx-auto  flex gap-6 flex-row lg:flex-row justify-start items-stretch relative">
+            <section className="container mx-auto  flex gap-6 flex-row lg:flex-row justify-start items-stretch relative">
                 <div className="section-space"></div>
                 <div className="content flex flex-row items-center justify-center text-center gap-6 relative">
                    
 
-                    <div className="content flex-row items-center text-start relative">
-                        <div className="content flex flex-col basis-5/2 lg:flex-row justify-start p-2 text-center gap-10 relative">
-                            <div className="content  flex flex-col items-start text-start">
+                    <div className="content flex flex-row items-center text-start relative">
+                        <div className="content flex flex-col  lg:flex-row justify-start p-2  text-center gap-10 relative">
+                            <div className="content  flex flex-col items-start text-start lg:w-1/2">
                                 <div className="content flex flex-col text-start gap-6">
                                     
                                     {isError && <h2>{isError}</h2>}
                                     
                                     {blog_Data.slice(0,1).map((post) => {
                                                      const { _id,imageUrl,createdAt, title, content } = post;
-                                        return( <div key={_id}>
+                                        return( 
+                                            <Link to={`/blog/${_id}`} >
+                                        <div key={_id}>
                                             <div className="content pt-4 flex flex-col items-start text-start">
                                         <img
                                             src={imageUrl}
@@ -62,16 +65,17 @@ useEffect(() => {
                                             height={900} */
                                         />
                                     </div>
-                                            <div className="p-2" >
+                                            <div className="p-2 " >
                                         <p className="font-thin mb-2 text-gray-400 text-sm"><small>{createdAt}</small></p>
                                         <p><a href="" className="font-bold mb-2">{title}</a></p>
-                                        <p className="font-thin bg-gray mt-2 text-sm">{content}</p>
-                                        </div></div>);
+                                        <p className="font-thin bg-gray mt-2 text-sm lg-blogContent">{content}</p>
+                                        </div></div></Link>);
+                                        
                                     })}
                                     
                                 </div>
                             </div>
-                            <div className="content items-start  flex flex-col justify-start text-start">
+                            <div className="content items-start  flex flex-col justify-start  text-start lg:w-1/2 ">
                                 <div className="blog-inner flex justify-end items-start gap-4 flex-col lg:flex-row">
                                     <section className="features relative ">
                                         <div className="feature-card flex flex-col lg:flex-row  "> {/* grid grid-rows-1 lg:grid-rows-3 */}
@@ -79,11 +83,13 @@ useEffect(() => {
                                             <div className=" flex flex-col ">
                                                 {blog_Data.slice(1,4).map((post) => {
                                                      const { _id,imageUrl,createdAt, title, content } = post;
-                                                return (<BlogCard key={_id}
+                                                return (<Link to={`/blog/${_id}`} >
+                                                    <BlogCard key={_id}
                                                     imageUrl={imageUrl}
                                                     createdAt={createdAt}
                                                     title={title}
-                                                    content={content}>{title}</BlogCard>);
+                                                    content={content}>{title}</BlogCard>
+                                                    </Link>);
                                                 })}
                                             </div>
                                             

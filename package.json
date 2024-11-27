@@ -12,6 +12,8 @@
   "dependencies": {
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
+    "@fortawesome/free-solid-svg-icons": "^6.7.1",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@mui/icons-material": "^5.16.7",
     "axios": "^1.7.7",
     "circletype": "^2.3.0",
@@ -22,8 +24,10 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.0",
+    "react-slick": "^0.30.2",
     "react-toastify": "^10.0.5",
     "sass": "^1.77.8",
+    "slick-carousel": "^1.8.1",
     "vite-plugin-html": "^3.2.2"
   },
   "devDependencies": {
