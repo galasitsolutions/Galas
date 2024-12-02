@@ -38,9 +38,9 @@ const Blog = () => {
 
   return (
     <MainLayout>
-      <div className="section-space"></div>
+      {/* <div className="section-space"></div> */}
       <section className="product relative bg-neutral-200 text-black">
-        {/* <div className="section-space"></div> */}
+        <div className="section-space-inner"></div>
         <div className="product-inner container mx-auto px-4 flex flex-col">
           <div className="product flex justify-center items-center p-2 lg:p-4 lg:gap-2">
             <article className="relative flex flex-col">
@@ -53,7 +53,7 @@ const Blog = () => {
               </p> */}
             </article>
           </div>
-          {/* <div className="section-space"></div> */}
+          <div className="section-space-inner"></div>
           <div className="hero-section-img">
             <div id="scene">
               <div className="w-full h-[25vh] lg:h-[50vh]">
