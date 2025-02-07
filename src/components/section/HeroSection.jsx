@@ -11,10 +11,11 @@ export default function HeroSection() {
   return (
     <>
       {/* Preload the LCP image */}
-      <link rel="preload" href={HeroBanner} as="image" />
+      <link rel="preload"  href={HeroBanner} as="image" id="hero-sec"/>
 
-      <div className="section-space" aria-hidden="true"></div>
+      <div className="section-space"   aria-hidden="true"></div>
       <section
+       
         className="hero-section relative container mx-auto px-6"
         aria-labelledby="hero-heading"
       >

@@ -5,9 +5,10 @@ import MainLayout from "../layout/MainLayout";
 const HeroSection = React.lazy(() => import("../section/HeroSection"));
 const AboutSection = React.lazy(() => import("../section/AboutSection"));
 const Services = React.lazy(() => import("../section/Services"));
-const Team = React.lazy(() => import("../section/Team"));
+// const Team = React.lazy(() => import("../section/Team"));
 const ContactUs = React.lazy(() => import("../section/ContactUs"));
-const UpcomingProducts = React.lazy(() => import("../section/UpcomingProducts"))
+const PartnerSection = React.lazy(() => import("../section/PartnerSection"));
+// const UpcomingProducts = React.lazy(() => import("../section/UpcomingProducts"))
 
 const ErrorBoundary = ({ children }) => {
   return <div>{children}</div>;
@@ -29,8 +30,9 @@ const Home = () => {
           <HeroSection />
           <AboutSection />
           <Services />
-          <UpcomingProducts />
-          <Team />
+          {/* <UpcomingProducts />
+          <Team /> */}
+          <PartnerSection/>
           <ContactUs />
         </ErrorBoundary>
       </Suspense>

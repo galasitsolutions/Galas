@@ -88,7 +88,7 @@ const AboutServices = () =>{
     return(
         <>
             <div className="section-space"></div>
-      <section className="product relative bg-neutral-200 text-black">
+      <section id="about-services" className="product relative bg-neutral-200 text-black">
         <div className="product-inner container mx-auto px-4 flex flex-col">
           <div className="product flex justify-center items-center p-2 lg:p-4 lg:gap-2">
           </div>

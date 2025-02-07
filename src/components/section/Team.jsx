@@ -42,7 +42,7 @@ export default function Team() {
 
   return (
     <>
-      <section className="team relative">
+      <section id="team" className="team relative">
         <div className="section-space"></div>
         <div className="team-inner container mx-auto px-6 flex flex-col items-center gap-8">
           <div className="content flex flex-col justify-center items-center text-center w-full">

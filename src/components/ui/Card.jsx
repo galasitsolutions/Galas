@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import Button from "./Button";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Card = ({ title, description, features }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -45,7 +46,9 @@ const Card = ({ title, description, features }) => {
           </ul>
         </div>
         <div className="product-btn mt-auto">
+        <Link to={"/about"} >
           <Button text="Learn More" />
+          </Link>
         </div>
       </article>
     </section>
