@@ -6,11 +6,18 @@ import fs from "fs";
 
 const getRoutes = () => {
   const routes = [];
-  const files = fs.readdirSync(path.resolve(__dirname, "src/pages"));
-  files.forEach((file) => {
-    const route = file.replace(".jsx", "");
-    routes.push(`/${route}`);
-  });
+  const pagesDir = path.resolve(__dirname, "src/pages");
+
+  if (fs.existsSync(pagesDir)) {
+    const files = fs.readdirSync(pagesDir);
+    files.forEach((file) => {
+      const route = file.replace(".jsx", "");
+      routes.push(`/${route}`);
+    });
+  } else {
+    console.warn(`Directory ${pagesDir} does not exist.`);
+  }
+
   return routes;
 };
 
