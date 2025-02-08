@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import CareerForm from "../ui/CareerForm";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import Slider from "react-slick";
@@ -181,6 +183,12 @@ const CareerSection = () => {
     },
   ];
 
+  const handleApplyClick = () => {
+    document
+      .getElementById("career-form-section")
+      .scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
       <section className="bg-neutral-200 text-black">
@@ -243,14 +251,24 @@ const CareerSection = () => {
                     </p>
                   </div>
                   <div className="px-6">
-                    <Button text="Apply " />
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <Link
+                        to="#career-form-section"
+                        onClick={handleApplyClick}
+                      >
+                        <Button text="Apply " />
+                      </Link>
+                    </motion.div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
-        <div className="section-space"></div>
+        <div id="career-form-section" className="section-space"></div>
         <div className="flex flex-col lg:flex-row container mx-auto px-2 gap-4 rounded-xl h-auto lg:h-[600px] overflow-hidden">
           <section className="content flex flex-col lg:w-1/2 p-8">
             <div className="w-full h-auto lg:h-[400px] md:h-[520px] rounded-xl">
@@ -262,7 +280,7 @@ const CareerSection = () => {
             </div>
           </section>
           <div className="section-space"></div>
-          <section className="flex flex-col lg:w-1/2 overflow-auto hide-scrollbar">
+          <section className=" flex flex-col lg:w-1/2 overflow-auto hide-scrollbar">
             <CareerForm
               email={contactUsProps.email}
               phoneNumber={contactUsProps.phoneNumber}
