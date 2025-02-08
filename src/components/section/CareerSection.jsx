@@ -199,7 +199,7 @@ const CareerSection = () => {
               Recommended <span className="text-blue-500">Jobs</span>
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-6">
             {jobListings.slice(0, 6).map((job, index) => (
               <div
                 key={index}
@@ -269,13 +269,13 @@ const CareerSection = () => {
           </div>
         </div>
         <div id="career-form-section" className="section-space"></div>
-        <div className="flex flex-col lg:flex-row container mx-auto px-2 gap-4 rounded-xl h-auto lg:h-[600px] overflow-hidden">
-          <section className="content flex flex-col lg:w-1/2 p-8">
+        <div className="flex flex-col lg:flex-row container mx-auto px-2 gap-1 rounded-xl h-auto lg:h-[600px] overflow-hidden">
+          <section className="content flex flex-col lg:w-1/2 px-4 py-0 ">
             <div className="w-full h-auto lg:h-[400px] md:h-[520px] rounded-xl">
               <img
                 src={gifImage}
                 alt="Team GIF"
-                className="w-full h-auto lg:h-[400px] md:h-[520px] p-2 rounded-xl"
+                className="w-full h-auto lg:h-auto md:h-[520px]  rounded-xl"
               />
             </div>
           </section>
