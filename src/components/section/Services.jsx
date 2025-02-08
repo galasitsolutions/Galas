@@ -31,7 +31,7 @@ const servicesData = [
 const Services = () => {
   return (
     <>
-      <div className="section-space" id="service-section" ></div>
+      <div className="section-space" id="service-section"></div>
       <section className="product relative bg-neutral-200 text-black">
         <div className="section-space"></div>
         <div className="product-inner container mx-auto px-4 flex flex-col">

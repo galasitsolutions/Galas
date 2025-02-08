@@ -105,7 +105,7 @@ function CareerForm({
   };
 
   return (
-    <article className="card-contact flex flex-col gap-6 justify-between rounded-lg px-4 py-6 shadow-none">
+    <article className="card-contact flex flex-col gap-6 justify-between  rounded-lg px-4 py-4 shadow-none">
       <div className="contact-form flex flex-col gap-4">
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 grow">
           <h4 className="font-semibold">Personal Information</h4>
@@ -115,7 +115,7 @@ function CareerForm({
               id="first-name"
               name="first_name"
               placeholder="First name"
-              className="flex-1 min-w-[40%] max-w-[48%]"
+              className="flex-1 min-w-[40%] max-w-[100%]"
               value={formData.first_name}
               onChange={handleChange}
               required
@@ -125,7 +125,7 @@ function CareerForm({
               id="last-name"
               name="last_name"
               placeholder="Last name"
-              className="flex-1 min-w-[40%] max-w-[48%]"
+              className="flex-1 min-w-[40%] max-w-[100%]"
               value={formData.last_name}
               onChange={handleChange}
               required
@@ -147,7 +147,7 @@ function CareerForm({
                 id="options"
                 name="country_code"
                 title="Select Country Code"
-                className="flex-1 min-w-[30%] max-w-[25%] text-black"
+                className="flex-1 min-w-[30%] max-w-[100%] text-black"
                 value={formData.country_code}
                 onChange={handleChange}
                 required
@@ -163,7 +163,7 @@ function CareerForm({
                 id="phone_number"
                 name="phone_number"
                 placeholder="Contact number"
-                className="flex-1 min-w-[66%] max-w-[80%]"
+                className="flex-1 min-w-[66%] max-w-[100%]"
                 value={formData.phone_number}
                 onChange={handleChange}
                 required
@@ -175,7 +175,7 @@ function CareerForm({
                 id="dob"
                 name="dob"
                 placeholder="DD/MM/YYYY"
-                className="flex min-w-full max-w-[40%] text-black"
+                className="flex min-w-full max-w-[100%] text-black"
                 value={formData.dob}
                 onChange={handleChange}
                 required
@@ -219,7 +219,7 @@ function CareerForm({
               name="institute_name"
               placeholder="Institute Name"
               rows="1"
-              className="flex-1 min-w-[40%] max-w-[75%] w-full"
+              className="flex-1 min-w-[40%] max-w-[100%]"
               value={formData.institute_name}
               onChange={handleChange}
             ></input>
@@ -229,7 +229,7 @@ function CareerForm({
               name="passing_year"
               placeholder="Passing Year"
               rows="1"
-              className="flex-1 min-w-[50%] max-w-[30%] text-black w-full"
+              className="flex-1 min-w-[50%] max-w-[100%] text-black"
               value={formData.passing_year}
               onChange={handleChange}
             ></input>
@@ -262,7 +262,7 @@ function CareerForm({
               name="preferred_role"
               placeholder="Preferred Role"
               rows="1"
-              className="flex-1 min-w-[55%] max-w-[75%]"
+              className="flex-1 min-w-[55%] max-w-[100%]"
               value={formData.preferred_role}
               onChange={handleChange}
             ></input>
@@ -271,7 +271,7 @@ function CareerForm({
               name="availability"
               placeholder="Availability to join"
               rows="1"
-              className="flex-1 min-w-[40%] max-w-[40%] text-black"
+              className="flex-1 min-w-[40%] max-w-[100%] text-black"
               value={formData.availability}
               onChange={handleChange}
             ></input>
