@@ -14,13 +14,7 @@ const footerData = {
     facebook: "https://www.facebook.com/profile.php?id=61562438966562",
     instagram: "https://www.instagram.com/galas_it_solutions/",
   },
-  services: [
-    "IT Staffing",
-    "Product Development",
-    "Digital Marketing",
-    "And more",
-  ],
-  quickLinks: ["Home", "About", "Services", "Team"],
+
 };
 
 export default function Footer() {
@@ -44,7 +38,7 @@ export default function Footer() {
                 Privacy Policy
               </a>
               <p className="copyright-section text-xs">
-                &copy; Copyright 2024 by Galas Enterprises
+                &copy; Copyright 2025 by GALAS IT SOLUTIONS Pvt. Ltd.
               </p>
             </div>
           </div>

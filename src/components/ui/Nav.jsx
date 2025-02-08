@@ -65,7 +65,7 @@ const Nav = ({ links }) => {
             ))}
             {/* Mobile Button */}
             <li className="lg:hidden px-4 pb-4">
-              <Link to="#contact">
+            <Link to={"/#contact"} >
                 <Button text="Let's Talk" />
               </Link>
             </li>
@@ -74,7 +74,7 @@ const Nav = ({ links }) => {
 
         {/* Desktop Button */}
         <div className="hidden lg:block">
-          <Link to="#contact">
+        <Link to={"/#contact"} >
             <Button text="Let's Talk" />
           </Link>
         </div>

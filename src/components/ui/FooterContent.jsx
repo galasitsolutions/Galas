@@ -11,9 +11,22 @@ const FooterContent = ({
   contactEmail,
   contactNumber,
   socialLinks,
-  services,
-  quickLinks,
+  // quickLinks,
 }) => {
+  const services = [
+    {name: "IT Staffing", id: "/about/#about-sec"},
+    {name: "Product Development", id: "/about/#about-sec"},
+    {name: "Digital Marketing", id: "/about/#about-sec"},
+    {name: "And more", id: "/about/#about-sec"},
+  ]
+
+  const quickLinks = [
+    {name: "Home", id: "/#hero-sec"},
+    {name: "About", id: "/about"},
+    {name: "Blog", id: "/blog"},
+    {name: "Event", id: "/event"},
+  ]
+
   const socialIcons = {
     facebook: <FacebookIcon />,
     instagram: <InstagramIcon />,
@@ -77,8 +90,8 @@ const FooterContent = ({
                 {services.map((service, index) => (
                   <li key={index} className="list transition-all">
                     <div className="hover:translate-x-4 transition-transform duration-300 ease-in-out">
-                      <a className="hover:text-blue-500" href="#services">
-                        {service}
+                      <a className="hover:text-blue-500" href={`${service.id}`}>
+                        {service.name}
                       </a>
                     </div>
                   </li>
@@ -97,9 +110,9 @@ const FooterContent = ({
                     <div className="hover:translate-x-4 transition-transform duration-300 ease-in-out">
                       <a
                         className="hover:text-blue-500"
-                        href={`#${link.toLowerCase()}`}
+                        href={`${link.id}`}
                       >
-                        {link}
+                        {link.name}
                       </a>
                     </div>
                   </li>
@@ -123,8 +136,8 @@ FooterContent.propTypes = {
     facebook: PropTypes.string,
     instagram: PropTypes.string,
   }).isRequired,
-  services: PropTypes.arrayOf(PropTypes.string).isRequired,
-  quickLinks: PropTypes.arrayOf(PropTypes.string).isRequired,
+  // services: PropTypes.arrayOf(PropTypes.string).isRequired,
+  // quickLinks: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default FooterContent;

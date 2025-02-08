@@ -84,7 +84,7 @@ function ContactCard({ title, subtitle, email, phoneNumber, countryOptions }) {
             type="email"
             id="email"
             name="user_email"
-            placeholder={email}
+            placeholder="email"
             className="w-full text-black"
             value={formData.user_email}
             onChange={handleChange}
@@ -110,7 +110,7 @@ function ContactCard({ title, subtitle, email, phoneNumber, countryOptions }) {
               type="text"
               id="phone-number"
               name="phone_number"
-              placeholder={phoneNumber}
+              placeholder="Phone Number"
               className="flex-1 min-w-[40%] max-w-[75%]"
               value={formData.phone_number}
               onChange={handleChange}

@@ -28,8 +28,8 @@ const aboutUsData = {
 export default function AboutSection() {
   return (
     <>
-      <div className="section-space" aria-hidden="true"></div>
-      <section className="about-us p-2 container mx-auto px-4">
+      <div className="section-space" id="about-sec" aria-hidden="true"></div>
+      <section  className="about-us p-2 container mx-auto px-4">
         <div className="about-inner flex justify-center items-center flex-wrap gap-10 flex-col lg:flex-row p-2">
           <div className="about-img relative flex-1">
             <img

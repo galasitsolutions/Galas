@@ -1,9 +1,10 @@
 import MainLayout from "../layout/MainLayout";
+import CareerSection from "../section/CareerSection";
 
 const Career = () => {
   return (
     <MainLayout>
-      <div>Career Opportunities</div>
+      <CareerSection></CareerSection>
     </MainLayout>
   );
 };

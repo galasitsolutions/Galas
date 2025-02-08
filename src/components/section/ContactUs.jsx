@@ -1,4 +1,6 @@
 import ContactCard from "../ui/ContactCard";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function ContactUs() {
   const countryOptions = [
@@ -22,11 +24,28 @@ export default function ContactUs() {
     countryOptions: countryOptions,
   };
 
+  const contactFrom =  {
+    email: "",
+    phoneNumber: "",
+    countryOptions: countryOptions,
+  }
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
   return (
     <>
       <div className="section-space" id="contact"></div>
 
-      <section className="contact-us relative w-full h-full bg-neutral-200 text-black">
+      <section  className="contact-us relative w-full h-full bg-neutral-200 text-black" >
         <div className="section-space"></div>
 
         <section className="contact-inner container mx-auto px-4 flex flex-wrap gap-10 flex-col lg:flex-row justify-center items-stretch">
@@ -73,9 +92,9 @@ export default function ContactUs() {
             <ContactCard
               title="Get in Touch"
               subtitle="You can reach us anytime"
-              email={contactUsProps.email}
-              phoneNumber={contactUsProps.phoneNumber}
-              countryOptions={contactUsProps.countryOptions}
+              email={contactFrom.email}
+              phoneNumber={contactFrom.phoneNumber}
+              countryOptions={contactFrom.countryOptions}
             />
           </section>
         </section>

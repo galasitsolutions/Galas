@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 
 const AboutUsContent = ({ title, heading, description, points }) => {
   return (
@@ -28,7 +29,9 @@ const AboutUsContent = ({ title, heading, description, points }) => {
           ))}
         </ul>
         <div className="product-btn">
-          <Button text="Learn More" />
+        <Link to={"/about"} >
+          <Button text="Learn More"/>
+          </Link>
         </div>
       </article>
     </div>
