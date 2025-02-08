@@ -6,6 +6,7 @@ import Full from "../components/pages/FullBlog";
 import Career from "../components/pages/Career";
 import Event from "../components/pages/Event";
 import Sitemap from "../components/pages/SitemapLayout";
+import NotFound from "../components/NotFound";
 
 const AppRoutes = () => {
   return (
@@ -18,6 +19,7 @@ const AppRoutes = () => {
         <Route path="/Event" element={<Event />} />
         <Route exact path="/Blog/:id" element={<Full />} />
         <Route path="/Sitemap" element={<Sitemap />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );
