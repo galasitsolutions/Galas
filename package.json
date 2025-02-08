@@ -18,6 +18,7 @@
     "axios": "^1.7.7",
     "circletype": "^2.3.0",
     "emailjs-com": "^3.2.0",
+    "framer-motion": "^12.4.1",
     "gsap": "^3.12.5",
     "lodash.debounce": "^4.0.8",
     "prop-types": "^15.8.1",

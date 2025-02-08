@@ -14,6 +14,7 @@ function ContactCard({ title, subtitle, email, phoneNumber, countryOptions }) {
     country_code: "",
     query: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,10 +23,11 @@ function ContactCard({ title, subtitle, email, phoneNumber, countryOptions }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     try {
       const response = await emailjs.send(
-        "service_vh5ufh7",
+        "service_tkkfamr",
         "template_g2up6j9",
         formData,
         "o-ehGY3yaYq18oybm"
@@ -47,6 +49,8 @@ function ContactCard({ title, subtitle, email, phoneNumber, countryOptions }) {
     } catch (err) {
       console.error("Failed to send message:", err);
       toast.error("Failed to send message.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -68,6 +72,7 @@ function ContactCard({ title, subtitle, email, phoneNumber, countryOptions }) {
               value={formData.first_name}
               onChange={handleChange}
               required
+              aria-label="First name"
             />
             <input
               type="text"
@@ -78,17 +83,19 @@ function ContactCard({ title, subtitle, email, phoneNumber, countryOptions }) {
               value={formData.last_name}
               onChange={handleChange}
               required
+              aria-label="Last name"
             />
           </div>
           <input
             type="email"
             id="email"
             name="user_email"
-            placeholder="email"
+            placeholder="Email"
             className="w-full text-black"
             value={formData.user_email}
             onChange={handleChange}
             required
+            aria-label="Email"
           />
           <div className="flex flex-wrap gap-4">
             <select
@@ -99,6 +106,7 @@ function ContactCard({ title, subtitle, email, phoneNumber, countryOptions }) {
               value={formData.country_code}
               onChange={handleChange}
               required
+              aria-label="Country code"
             >
               {countryOptions.map((option) => (
                 <option key={option.value} value={option.value}>
@@ -115,6 +123,7 @@ function ContactCard({ title, subtitle, email, phoneNumber, countryOptions }) {
               value={formData.phone_number}
               onChange={handleChange}
               required
+              aria-label="Phone number"
             />
           </div>
           <textarea
@@ -125,9 +134,13 @@ function ContactCard({ title, subtitle, email, phoneNumber, countryOptions }) {
             className="w-full text-black"
             value={formData.query}
             onChange={handleChange}
+            aria-label="Query"
           ></textarea>
           <div className="flex justify-between items-center">
-            <Button text="Submit" />
+            <Button
+              text={isSubmitting ? "Submitting..." : "Submit"}
+              disabled={isSubmitting}
+            />
           </div>
           <p className="text-xs mt-2">
             By contacting us, you agree to our
