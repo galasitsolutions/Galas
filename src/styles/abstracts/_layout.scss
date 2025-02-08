@@ -7,3 +7,12 @@
 .section-space-inner {
   height: 3vw;
 }
+
+.svg-icon {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+  background-image: url("@assets/img/icons/arrow2.svg");
+  background-size: cover;
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
+}
