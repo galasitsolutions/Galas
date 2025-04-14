@@ -1,39 +1,11 @@
-import { useState } from "react";
 import CareerForm from "../ui/CareerForm";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import img1 from "../../assets/img/product/5.png";
-import img2 from "../../assets/img/product/6.png";
 import Button from "../ui/Button";
 import gifImage from '../../assets/img/team/gifImage1.gif';
 
 
 const CareerSection = () => {
-  const [isHovered, setIsHovered] = useState(false);
-
-  const careerContents = [
-    {
-      title: "Web Development",
-      description: " Building robust, scalable, and modern web applications using the latest technologies."
-    },
-    {
-      title: "App Development",
-      description: " Designing and developing innovative mobile applications that provide seamless user experiences."
-    },
-    {
-      title: "UI/UX Designing",
-      description: "Crafting intuitive, user-friendly designs that enhance the functionality and appeal of our products."
-    },
-  ];
-
-  const images = [
-    { src: img1 },
-    { src: img2 },
-    { src: img1 },
-    { src: img2 },
-  ];
 
   const countryOptions = [
     { value: "+91", label: "+91" },
@@ -51,10 +23,8 @@ const CareerSection = () => {
     specialization: "",
     institute_name: "",
     passing_year: "",
-    previous_Experiance: "",
-    experiance_year: "",
     portfolio_link: "",
-    role_responsibility: "",
+    gitHub_link: "",
     technical_skills: "",
     soft_skills: "",
     preferred_role: "",
@@ -64,26 +34,6 @@ const CareerSection = () => {
     cv: "",
   };
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    arrows: false,
-    appendDots: (dots) => (
-      <div>
-        <ul className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 px-3 py-1 rounded-lg">
-          {dots}
-        </ul>
-      </div>
-    ),
-    customPaging: (i) => (
-      <div className="w-6 h-[4px] bg-gray-200 rounded-xl hover:bg-blue-600 " />
-    ),
-  };
 
   const jobListings = [
     {
@@ -152,7 +102,7 @@ const CareerSection = () => {
               Recommended <span className="text-blue-500">Jobs</span>
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:grid-cols-3">
             {jobListings.slice(0, 6).map((job, index) => (
               <div key={index} className="bg-white p-2 rounded-3xl w-full border border-gray-300 flex flex-col">
                 <div className="bg-blue-100 p-2 rounded-xl flex-grow flex flex-col">
@@ -218,10 +168,8 @@ const CareerSection = () => {
               specialization={contactUsProps.specialization}
               institute_name={contactUsProps.institute_name}
               passing_year={contactUsProps.passing_year}
-              previous_Experiance={contactUsProps.previous_Experiance}
-              experiance_year={contactUsProps.experiance_year}
               portfolio_link={contactUsProps.portfolio_link}
-              role_responsibility={contactUsProps.role_responsibility}
+              gitHub_link={contactUsProps.gitHub_link}
               technical_skills={contactUsProps.technical_skills}
               soft_skills={contactUsProps.soft_skills}
               preferred_role={contactUsProps.preferred_role}
