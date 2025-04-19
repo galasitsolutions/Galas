@@ -7,6 +7,7 @@ import Career from "../components/pages/Career";
 import Event from "../components/pages/Event";
 import Sitemap from "../components/pages/SitemapLayout";
 import NotFound from "../components/NotFound";
+import OurProducts from "../components/pages/OurProducts";
 
 const AppRoutes = () => {
   return (
@@ -17,6 +18,7 @@ const AppRoutes = () => {
         <Route path="/Blog" element={<Blog />} />
         <Route path="/Career" element={<Career />} />
         <Route path="/Event" element={<Event />} />
+        <Route path="ourproduct" element={< OurProducts/>}/>
         <Route exact path="/Blog/:id" element={<Full />} />
         <Route path="/Sitemap" element={<Sitemap />} />
         <Route path="*" element={<NotFound />} />

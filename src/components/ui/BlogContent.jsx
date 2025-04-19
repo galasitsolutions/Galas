@@ -11,7 +11,7 @@ const OurblogContent = () => {
   const getApi_Data = async () => {
     try {
       const res = await axios.get(
-        "https://galasback.onrender.com/api/post/all-blogs?page=1&limit=6"
+        "https://galasback.onrender.com/api/post/all-blogs?page=1&limit=6"  // added pagination in URL
       );
       setMy_Data(res.data);
       setIsLoading(false);
