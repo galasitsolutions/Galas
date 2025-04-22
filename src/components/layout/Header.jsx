@@ -8,7 +8,7 @@ const Header = () => {
       { path: "/about", label: "About" },
       { path: "/blog", label: "Blog" },
       { path: "/career", label: "Career" },
-      { path: "/event", label: "Event" },
+      // { path: "/event", label: "Event" },
     ],
     []
   );

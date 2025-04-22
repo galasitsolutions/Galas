@@ -3,28 +3,28 @@ import Card from "../ui/Card";
 const servicesData = [
   {
     id: 1,
-    title: "IT Product Development",
+    title: "Software Development",
     description:
-      "We offer product features based on your specifications, produce MVPs, and develop in Agile. We analyze, develop, and develop a precise product that is targeted to your objectives.",
-    features: ["Web Development", "App Development", "UI/UX Designing"],
+      "We build scalable and efficient software solutions tailored to your business goals. From idea validation to MVP development and full-scale deployment, we follow Agile methodologies to ensure speed, flexibility, and quality.",
+    features: ["Web & Mobile Development", "Custom Software Solutions", "UI/UX Designing"],
   },
   {
     id: 2,
-    title: "IT Staffing",
+    title: "DeepTech Talent Solutions",
     description:
-      "Staffing, about finding the right person for the job, not just the requirements. We thrive in matching people with your team's culture and work ethic, from the C-suite to entry-level positions.",
+      "Finding the right tech talent goes beyond skillsets—it’s about aligning with your innovation-driven culture. We specialize in connecting you with professionals who thrive in DeepTech environments, ensuring your projects move forward with clarity and expertise.",
     features: [
-      "Short-Long Term Hiring",
-      "Rigorous Screening",
-      "Talent Acquisition",
+      "Specialized Tech Hiring",
+      "AI/ML Engineering Talent",
+      "End-to-End Talent Acquisition",
     ],
   },
   {
     id: 3,
-    title: "Digital Marketing",
+    title: "AI-Driven Strategy & Solutions",
     description:
-      "Our skilled experts develop personalized digital marketing plans that are aligned with your company's objectives, leveraging the newest trends to achieve strategic, measurable results.",
-    features: ["Social Media Marketing", "Graphic Designing", "Brand Building"],
+      "Our AI experts design intelligent systems that solve complex problems, optimize operations, and unlock new business opportunities. From data-driven decision making to smart automation, we deliver AI solutions that drive impact.",
+    features: ["Machine Learning Models", "Intelligent Automation", "Data Analytics & Insights"],
   },
 ];
 
@@ -38,11 +38,10 @@ const Services = () => {
           <div className="product flex justify-center items-center p-2 lg:p-4 lg:gap-2">
             <article className="relative flex flex-col">
               <h2 className="content-heading text-center font-heading font-semibold">
-                Our Expertise in <span className="text-blue-500">Services</span>
+                Our Expertise in <span className="text-blue-500">Technologies</span>
               </h2>
               <p className="text-xs text-center">
-                Delivering expert solutions tailored to meet your unique
-                business needs.
+              Driving intelligent solutions through innovation and advanced tech.
               </p>
             </article>
           </div>

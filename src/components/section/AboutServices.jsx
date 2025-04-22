@@ -1,88 +1,39 @@
 import React from "react";
 import ServicesCard from "../ui/ServicesCard";
-const servicesData = [
+ 
+import ManageHistoryIcon from "@mui/icons-material/ManageHistory";
+import AdUnitsIcon from "@mui/icons-material/AdUnits";
+import BusinessIcon from "@mui/icons-material/Business";
+ 
+const digitalmarketing = [
   {
-    title: "Digital Marketing Services",
-    points: [
-      {
-        subhead: "SEO Management",
-        desc: " Improve your website's search engine ranking and drive organic traffic with our expert SEO services, designed to increase visibility on search engines like Google.",
-        icons: ">", // <span>🔍</span>
-      },
-      {
-        subhead: "PPC (Pay-Per-Click) Advertising",
-        desc: " Create high-quality, targeted ads that drive traffic to your website, increasing website traffic and revenue.",
-        icons: <span>🎯</span>,
-      },
-      {
-        subhead: "Content Marketing",
-        desc: " Develop and manage content that resonates with your audience, driving traffic and increasing website traffic and revenue.",
-        icons: <span>📝</span>,
-      },
-      {
-        subhead: "Social Media Management",
-        desc: " Build strong connections with your audience through tailored social media marketing strategies, boosting brand awareness and engagement.",
-        icons: <span>📱</span>,
-      },
-      {
-        subhead: "Email Campaign Management",
-        desc: " Generate leads and improve customer retention through personalized email marketing campaigns that are crafted to drive action.",
-        icons: <span>📧</span>,
-      },
-      {
-        subhead: "Website Maintenance",
-        desc: "  Keep your website running smoothly with our website maintenance services, ensuring optimal performance, security, and user experience.",
-        icons: <span>⚙️</span>,
-      },
-    ],
+    subhead: "Software Development",
+    desc: "Building scalable and efficient software solutions.",
+    features: ["Web Development", "App Development", "UI/UX Designing"],
+    icon: ManageHistoryIcon,
   },
   {
-    title: "IT Services",
-    points: [
-      {
-        subhead: "IT Consulting",
-        desc: "Empower your business with strategic IT consulting services, helping you implement scalable and efficient IT infrastructure.",
-        icons: <span>💻</span>,
-      },
-      {
-        subhead: "Mobile Application Development",
-        desc: "Create impactful and user-friendly mobile apps that drive customer engagement on iOS and Android platforms.",
-        icons: <span>📱</span>,
-      },
-      {
-        subhead: "Web Development",
-        desc: "Build fast, secure, and responsive websites with our comprehensive web development services, tailored to meet your business objectives.",
-        icons: <span>🌐</span>,
-      },
-      {
-        subhead: "IT Project Management",
-        desc: "Ensure the success of your projects with our expert IT project management services, from planning and execution to completion.",
-        icons: <span>📋</span>,
-      },
+    subhead: "AI-Driven Strategy & Solutions",
+    desc: "AI experts design intelligent systems that solve complex problems.",
+    features: [
+      "Machine learning Models",
+      "Intelligent Automation",
+      "Data Analytics & Insights",
     ],
+    icon: AdUnitsIcon,
   },
   {
-    title: "Staffing Services",
-    points: [
-      {
-        subhead: "Permanent Staffing",
-        desc: "Find the perfect fit for your long-term roles with our professional permanent staffing services, ensuring the right talent matches your organization’s needs.",
-        icons: <span>👔</span>,
-      },
-      {
-        subhead: "Contract Staffing",
-        desc: "Meet your short-term or project-based staffing requirements with our contract staffing solutions, providing skilled professionals on demand.",
-        icons: <span>📄</span>,
-      },
-      {
-        subhead: "Contract to Hire",
-        desc: "Evaluate potential hires before making permanent commitments with our flexible contract-to-hire services, ensuring you hire the best fit for your team.",
-        icons: <span>🔄</span>,
-      },
+    subhead: "DeepTech Talent Solutions",
+    desc: "DeepTech environments, ensuring your projects move forward with clarity and expertise.",
+    features: [
+      "Specialized Tech Hiring",
+      "AI/ML Engineering Talent",
+      "End-to-End Talent Acquisition",
     ],
+    icon: BusinessIcon,
   },
+ 
 ];
-
 const AboutServices = () => {
   return (
     <>
@@ -96,7 +47,7 @@ const AboutServices = () => {
           <div className="product flex justify-center items-center p-2 lg:p-4 lg:gap-2">
             <article className="relative flex flex-col">
               <h2 className="content-heading text-center font-heading font-semibold">
-                Our included<span className="text-blue-500"> Services</span>
+                <span className="text-blue-500"> Technologies</span> We Use
               </h2>
               <p className="text-xs text-center">
                 Delivering expert solutions tailored to meet your unique
@@ -104,19 +55,24 @@ const AboutServices = () => {
               </p>
             </article>
           </div>
-
+ 
           <div className="section-space"></div>
-          <section className="services relative">
-            <div className="services-card grid grid-cols-1 lg:grid-cols-3 gap-4">
-              {servicesData.map((service, index) => (
+          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+            {digitalmarketing.map((service, index) => (
+              <div
+                key={index}
+                className={`relative ${
+                  index === 1 || index === 4 ? "lg:-mt-10" : ""
+                } transition-transform duration-300`}
+              >
                 <ServicesCard
-                  key={index} // Use unique identifier for key
-                  title={service.title}
-                  points={service.points}
+                  subhead={service.subhead}
+                  desc={service.desc}
+                  Icon={service.icon}
+                  features={service.features}
                 />
-              ))}
-            </div>
-            <div className="section-space"></div>
+              </div>
+            ))}
           </section>
         </div>
         <div className="section-space-inner"></div>
@@ -124,5 +80,5 @@ const AboutServices = () => {
     </>
   );
 };
-
+ 
 export default AboutServices;

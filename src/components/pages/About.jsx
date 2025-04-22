@@ -3,9 +3,11 @@ import MainLayout from "../layout/MainLayout";
 
 const AboutTopSec = React.lazy(() => import("../section/AboutTopSec"));
 const AboutServices = React.lazy(() => import("../section/AboutServices"));
-const PrimaryKeySection = React.lazy(() => import("../section/PrimaryKeySection"));
-const SecondaryKeySection = React.lazy(() => import("../section/SecondaryKeySec"));
-const RankingSec= React.lazy(() => import("../section/RankingSec"));
+const Industries = React.lazy(() => import("../section/Industries"));
+const Contact = React.lazy(() => import("../section/ContactUs"));
+// const PrimaryKeySection = React.lazy(() => import("../section/PrimaryKeySection"));
+// const SecondaryKeySection = React.lazy(() => import("../section/SecondaryKeySec"));
+// const RankingSec= React.lazy(() => import("../section/RankingSec"));
 
 const Blog = () => {
   return (
@@ -17,9 +19,11 @@ const Blog = () => {
       >
         <AboutTopSec></AboutTopSec>
         <AboutServices></AboutServices>
-        <PrimaryKeySection></PrimaryKeySection>
+        <Industries></Industries>
+        <Contact></Contact>
+        {/* <PrimaryKeySection></PrimaryKeySection>
         <SecondaryKeySection></SecondaryKeySection>
-        <RankingSec></RankingSec>
+        <RankingSec></RankingSec> */}
       </Suspense>
     </MainLayout>
   );

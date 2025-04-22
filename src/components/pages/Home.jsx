@@ -9,7 +9,7 @@ const Services = React.lazy(() => import("../section/Services"));
 // const Team = React.lazy(() => import("../section/Team"));
 const ContactUs = React.lazy(() => import("../section/ContactUs"));
 const PartnerSection = React.lazy(() => import("../section/PartnerSection"));
-// const UpcomingProducts = React.lazy(() => import("../section/UpcomingProducts"))
+// const OurProduct = React.lazy(() => import("../section/OurProduct"))
 
 const ErrorBoundary = ({ children }) => {
   return <div>{children}</div>;
@@ -104,8 +104,8 @@ const Home = () => {
           <HeroSection />
           <AboutSection />
           <Services />
-          {/* <UpcomingProducts />
-          <Team /> */}
+          {/* <OurProduct /> */}
+          {/* <Team /> */}
           <PartnerSection />
           <ContactUs />
         </ErrorBoundary>

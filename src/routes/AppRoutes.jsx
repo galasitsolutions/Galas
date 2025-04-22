@@ -16,7 +16,7 @@ const AppRoutes = () => {
         <Route path="/About" element={<About />} />
         <Route path="/Blog" element={<Blog />} />
         <Route path="/Career" element={<Career />} />
-        <Route path="/Event" element={<Event />} />
+        {/* <Route path="/Event" element={<Event />} /> */}
         <Route exact path="/Blog/:id" element={<Full />} />
         <Route path="/Sitemap" element={<Sitemap />} />
         <Route path="*" element={<NotFound />} />
