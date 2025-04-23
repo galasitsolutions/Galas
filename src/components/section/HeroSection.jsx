@@ -88,7 +88,7 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
-      <Marquee textItems={marqueeTextItems} />
+      {/* <Marquee textItems={marqueeTextItems} /> */}
     </>
   );
 }

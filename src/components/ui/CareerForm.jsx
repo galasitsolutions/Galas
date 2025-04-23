@@ -16,11 +16,13 @@ function CareerForm({
   institute_name,
   passing_year,
   portfolio_link,
+  gitHub_link,
   technical_skills,
   soft_skills,
   preferred_role,
   availability,
   location,
+  expected_salary,
   cv,
 }) {
   const [formData, setFormData] = useState({
@@ -36,15 +38,18 @@ function CareerForm({
     institute_name: institute_name,
     passing_year: passing_year,
     portfolio_link: portfolio_link,
+    gitHub_link: gitHub_link,
     technical_skills: technical_skills,
     soft_skills: soft_skills,
     preferred_role: preferred_role,
     availability: availability,
     location: location,
+    expected_salary: expected_salary,
     cv: cv,
   });
 
   const [isLoading, setIsLoading] = useState(false);
+  const [showNote, setShowNote] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -86,11 +91,13 @@ function CareerForm({
           institute_name: institute_name,
           passing_year: passing_year,
           portfolio_link: portfolio_link,
+          gitHub_link: gitHub_link,
           technical_skills: technical_skills,
           soft_skills: soft_skills,
           preferred_role: preferred_role,
           availability: availability,
           location: location,
+          expected_salary: expected_salary,
           cv: cv,
         });
       } else {
@@ -192,6 +199,26 @@ function CareerForm({
             value={formData.fullAddress}
             onChange={handleChange}
           ></textarea>
+          <div className="flex flex-row gap-2">
+          <input
+            id="portfolio_link"
+            name="portfolio_link"
+            placeholder="Portfolio Link(LinkedIn)"
+            rows="1"
+            className="flex-1 w-full text-black"
+            value={formData.portfolio_link}
+            onChange={handleChange}
+          ></input>
+          <input
+            id="gitHub_link"
+            name="gitHub_link"
+            placeholder="GitHub Link"
+            rows="1"
+            className="flex-1 w-full text-black"
+            value={formData.gitHub_link}
+            onChange={handleChange}
+          ></input>
+          </div>
 
           <hr className="border-slate-400"></hr>
           <h4 className="font-semibold"> Educational Background</h4>
@@ -276,24 +303,46 @@ function CareerForm({
               onChange={handleChange}
             ></input>
           </div>
-          <input
-            id="location"
-            name="location"
-            placeholder="Location"
-            rows="1"
-            className="flex-1 w-full text-black"
-            value={formData.location}
-            onChange={handleChange}
-          ></input>
+          <div className="flex md:flex-row flex-col gap-4">
+            <input
+              id="location"
+              name="location"
+              placeholder="Location"
+              rows="1"
+              className="flex-1 w-full text-black"
+              value={formData.location}
+              onChange={handleChange}
+            ></input>
+            <select
+             id="expected_salary"
+             name="expected_salary"
+             className="flex-1 w-full text-black px-2"
+             value={formData.expected_salary || ""}
+             onChange={handleChange}
+           >
+             <option value=""  placeholder="Expected Salary" disabled selected>
+              Expected salary
+             </option>
+              <option value="paid" disabled>Paid</option>
+              <option value="unpaid">Unpaid</option>
+            </select>
+
+          </div>
           <input
             id="cv"
             name="cv"
-            placeholder="Resume Link"
+            placeholder="Resume Drive Link"
             rows="1"
             className="flex-1 w-full text-black"
             value={formData.cv}
             onChange={handleChange}
-          ></input>
+            onFocus={() => setShowNote(true)}
+            onBlur={() => setShowNote(false)}
+          ></input> {showNote && (
+            <p className="text-sm text-gray-600">
+              🔔 Please provide an open Google Drive link that can be accessed by everyone.
+            </p>
+          )}
 
           <div className="flex justify-between items-center">
             <Button text={isLoading ? "Sending..." : "Submit"} />
@@ -321,11 +370,13 @@ CareerForm.propTypes = {
   institute_name: PropTypes.string.isRequired,
   passing_year: PropTypes.string.isRequired,
   portfolio_link: PropTypes.string.isRequired,
+  gitHub_link: PropTypes.string.isRequired,
   technical_skills: PropTypes.string.isRequired,
   soft_skills: PropTypes.string.isRequired,
   preferred_role: PropTypes.string.isRequired,
   availability: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
+  expected_salary: PropTypes.string.isRequired,
   cv: PropTypes.string.isRequired,
 };
 

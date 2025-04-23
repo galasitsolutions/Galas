@@ -14,17 +14,20 @@ const FooterContent = ({
   // quickLinks,
 }) => {
   const services = [
-    {name: "IT Staffing", id: "/about/#about-sec"},
-    {name: "Product Development", id: "/about/#about-sec"},
-    {name: "Digital Marketing", id: "/about/#about-sec"},
-    {name: "And more", id: "/about/#about-sec"},
+    // {name: "IT Staffing", id: "/about/#about-sec"},
+    // {name: "Product Development", id: "/about/#about-sec"},
+    // {name: "Digital Marketing", id: "/about/#about-sec"},
+    // {name: "And more", id: "/about/#about-sec"},
+    {name: "Software Development", id:"/about"},
+    {name: "Deep Techology", id:"/about"},
+    {name: "Artificial Intelligence", id:"/about"},
   ]
 
   const quickLinks = [
     {name: "Home", id: "/#hero-sec"},
     {name: "About", id: "/about"},
     {name: "Blog", id: "/blog"},
-    {name: "Event", id: "/event"},
+    // {name: "Event", id: "/event"},
   ]
 
   const socialIcons = {

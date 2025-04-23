@@ -10,18 +10,11 @@ const aboutUsData = {
       Unmatched Success
     </>
   ),
-  description: `Galas IT Solution incorporates skilled IT professionals with
-                innovative companies. We ensure that candidates are highly
-                qualified and culturally appropriate by doing thorough
-                screening. Our dedication to customer and candidate success
-                shows our grasp of the IT industry's needs. Partnering with
-                Galas IT Solution means having a dedicated ally in the
-                ever-changing tech landscape, which ensures your
-                organization's success.`,
+  description: `Galas IT Solution connects forward-thinking companies with top-tier IT talent, ensuring every candidate is technically proficient and culturally aligned. With a strong focus on innovation, we specialize in delivering cutting-edge solutions in custom software development, deeptech innovations, and artificial intelligence. Our deep understanding of the evolving tech landscape enables us to drive impactful results. Partnering with us means gaining a strategic ally committed to powering your growth.`,
   points: [
-    "Contract and Permanent Hiring",
-    "Targeted Digital Marketing Solutions",
-    "Comprehensive IT Consulting Services",
+    "Cybersecurity Enhancements",
+    "Healthcare Technology Solutions",
+    "Banking & Financial IT Systems",
   ],
 };
 
